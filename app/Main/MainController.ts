@@ -1,7 +1,6 @@
 module App.Contact {
     import ModalService = Services.ModalService;
 
-    /* TODO: ContactController being used as main controller; refactor in future if needed. */
     export class MainController {
         firstName: string;
         lastName: string;
@@ -13,10 +12,16 @@ module App.Contact {
         constructor(public $scope: ng.IScope, public $http: ng.IHttpService, public modalService: ModalService){
         }
 
+        scroll = (href: string): void => {
+            $('html, body').stop().animate({
+                scrollTop: ($(href).offset().top - 80)
+            }, 1250, 'easeInOutExpo');
+            event.preventDefault();
+        }
+
         sendEmail = (form: ng.IFormController): void =>{
             this.attemptedSend = true;
             if(form.$valid){
-                this.modalService.displayToast('Got It', 'Message sent, I will respond shortly.', 'success');    
                 /* Create data */
                 var data = {
                     firstName: this.firstName,

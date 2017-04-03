@@ -9,10 +9,15 @@ var App;
                 this.$http = $http;
                 this.modalService = modalService;
                 this.attemptedSend = false;
+                this.scroll = function (href) {
+                    $('html, body').stop().animate({
+                        scrollTop: ($(href).offset().top - 80)
+                    }, 1250, 'easeInOutExpo');
+                    event.preventDefault();
+                };
                 this.sendEmail = function (form) {
                     _this.attemptedSend = true;
                     if (form.$valid) {
-                        _this.modalService.displayToast('Got It', 'Message sent, I will respond shortly.', 'success');
                         var data = {
                             firstName: _this.firstName,
                             lastName: _this.lastName,

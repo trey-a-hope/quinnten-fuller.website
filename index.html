@@ -21,12 +21,10 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Theme CSS -->
-    <link href="css/agency.min.css" rel="stylesheet">
+    <link href="css/agency.css" rel="stylesheet">
 
     <!-- Animations -->
     <link rel="stylesheet" href="css/animate.css">
-
-    <!-- Bootstrap -->
 
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -38,8 +36,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
     <script src="plugins/ng-toast/dist/ngToast.min.js"></script>
 
-    <!-- Bootstrap -->
-    <script src="js/scripts/ui-bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+    <!-- Bootstrap Core JS -->
+    <script src="js/scripts/ui-bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
     <!-- Modules -->
     <script src="app/Modules/QuinntenFuller.js"></script>
@@ -49,6 +49,15 @@
 
     <!-- Services -->
     <script src="app/Services/ModalService.js"></script>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+    });
+    </script>
 
 
 </head>
@@ -74,13 +83,13 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#services">Services</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#team">Team</a>
@@ -101,10 +110,106 @@
             <div class="intro-text">
                 <div class="intro-lead-in">Welcome To Our Studio!</div>
                 <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+                <a href="#reachMore" class="page-scroll btn btn-xl">Tell Me More</a>
             </div>
         </div>
     </header>
+    
+    <!-- Reach More Section -->
+    <section id="reachMore">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">
+                        Reach More
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p class="text-muted">
+                        Successful businesses leverage their digital channels such as e-mail, search engines, social media, and web content to reach both prospective and current customers. Here at Intercom, we implement strong practices to increase visibility, search-ability, engagement, and your bottom line.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <!-- SEO -->
+                <div class="col-lg-2 text-center">
+                    <span class="fa-stack fa-4x cursor-pointer" 
+                        ng-click="vm.scroll('#intercomSearchEngineOptimzation')"
+                        data-toggle="tooltip" title="Intercom Search Engine Optimization"
+                        data-placement="bottom">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <!-- Paid Search Marketing -->
+                <div class="col-lg-2 text-center">
+                    <span class="fa-stack fa-4x cursor-pointer" 
+                        ng-click="vm.scroll('#paidSearchMarketing')"
+                        data-toggle="tooltip" title="Paid Search Marketing"
+                        data-placement="bottom">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-dollar fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+                <!-- Button 3 -->
+                <div class="col-lg-2 text-center">
+                    <button class="btn btn-default">
+                        Button 3
+                    </button>
+                </div>
+                <!-- Button 4 -->
+                <div class="col-lg-2 text-center">
+                    <button class="btn btn-default">
+                        Button 4
+                    </button>
+                </div>
+                <!-- Button 5 -->
+                <div class="col-lg-2 text-center">
+                    <button class="btn btn-default">
+                        Button 5
+                    </button>
+                </div>
+                <!-- Button 6 -->
+                <div class="col-lg-2 text-center">
+                    <button class="btn btn-default">
+                        Button 6
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">About</h2>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">We won! How?</h4>
+                    <p class="text-muted">It's because you're here, on this landing page. Thats our goal, to position businesses like yours in front of  consumers across the globe. Intercom is a digital marketing consulting company founded in Miami, Florida. Smart companies seek us to help  improve how visible and searchable their business is while increasing their bottom line.  We examine all the segments of  digital marketing  (SEO, PPC, e-mail, social media, web content, analytics) to confirm your marketing efforts are fully optimized.</p>
+                </div>
+                <div class="col-md-6">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Two reasons you should choose Intercom.</h4>
+                    <p class="text-muted">We work, hard!
+The same way you found yourself here is the same reason while we're successful. Our digital marketing  practices work. To continue being successful, Intercom stays educated on the latest practices in the industry such as seo algorithms, customer engagement, ctr, lead generation, and analytics to name a few. We want to see your business perform better. It's the reason we work so hard. Our job isn't over until we are confident your business objectives have been met.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Services Section -->
     <section id="services">
@@ -112,33 +217,29 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <!--<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>-->
                 </div>
             </div>
-            <div class="row text-center">
-                <div class="col-md-4">
+            <!-- Intercom Search Engine Optimzation -->
+            <div class="row text-center" id="intercomSearchEngineOptimzation">
+                <div class="col-lg-6 col-lg-offset-3">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                        <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">E-Commerce</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 class="service-heading">Intercom Search Engine Optimization</h4>
+                    <p class="text-muted">Intercoms SEO strategy will help you drive business. We  improve traffic, visibility, and the ranking of your websites/webpage organic search results.</p>
                 </div>
-                <div class="col-md-4">
+            </div>
+            <!-- Intercom Search Engine Optimzation -->
+            <div class="row text-center" id="paidSearchMarketing">
+                <div class="col-lg-6 col-lg-offset-3">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                        <i class="fa fa-dollar fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">Responsive Design</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 class="service-heading">Paid Search Marketing (PPC)</h4>
+                    <p class="text-muted">Amplify your online presence. Reach higher qualified leads at the right moment.</p>
                 </div>
             </div>
         </div>
@@ -243,7 +344,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <!--<section id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -321,7 +422,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- Team Section -->
     <section id="team" class="bg-light-gray">

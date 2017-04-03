@@ -11,6 +11,7 @@ declare module App.Contact {
         attemptedSend: boolean;
         static $inject: string[];
         constructor($scope: ng.IScope, $http: ng.IHttpService, modalService: ModalService);
+        scroll: (href: string) => void;
         sendEmail: (form: ng.IFormController) => void;
     }
 }
