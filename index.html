@@ -83,6 +83,9 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="#reachMore">Reach More</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
@@ -116,134 +119,11 @@
     </header>
     
     <!-- Reach More Section -->
-    <section id="reachMore">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">
-                        Reach More
-                    </h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p class="text-muted">
-                        Successful businesses leverage their digital channels such as e-mail, search engines, social media, and web content to reach both prospective and current customers. Here at Intercom, we implement strong practices to increase visibility, search-ability, engagement, and your bottom line.
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <!-- SEO -->
-                <div class="col-lg-2 text-center">
-                    <span class="fa-stack fa-4x cursor-pointer" 
-                        ng-click="vm.scroll('#intercomSearchEngineOptimzation')"
-                        data-toggle="tooltip" title="Intercom Search Engine Optimization"
-                        data-placement="bottom">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-                <!-- Paid Search Marketing -->
-                <div class="col-lg-2 text-center">
-                    <span class="fa-stack fa-4x cursor-pointer" 
-                        ng-click="vm.scroll('#paidSearchMarketing')"
-                        data-toggle="tooltip" title="Paid Search Marketing"
-                        data-placement="bottom">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-dollar fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-                <!-- Button 3 -->
-                <div class="col-lg-2 text-center">
-                    <button class="btn btn-default">
-                        Button 3
-                    </button>
-                </div>
-                <!-- Button 4 -->
-                <div class="col-lg-2 text-center">
-                    <button class="btn btn-default">
-                        Button 4
-                    </button>
-                </div>
-                <!-- Button 5 -->
-                <div class="col-lg-2 text-center">
-                    <button class="btn btn-default">
-                        Button 5
-                    </button>
-                </div>
-                <!-- Button 6 -->
-                <div class="col-lg-2 text-center">
-                    <button class="btn btn-default">
-                        Button 6
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <div ng-include="'app/Partials/ReachMore.html'"></div>
     <!-- About Section -->
-    <section id="about" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-6">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">We won! How?</h4>
-                    <p class="text-muted">It's because you're here, on this landing page. Thats our goal, to position businesses like yours in front of  consumers across the globe. Intercom is a digital marketing consulting company founded in Miami, Florida. Smart companies seek us to help  improve how visible and searchable their business is while increasing their bottom line.  We examine all the segments of  digital marketing  (SEO, PPC, e-mail, social media, web content, analytics) to confirm your marketing efforts are fully optimized.</p>
-                </div>
-                <div class="col-md-6">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Two reasons you should choose Intercom.</h4>
-                    <p class="text-muted">We work, hard!
-The same way you found yourself here is the same reason while we're successful. Our digital marketing  practices work. To continue being successful, Intercom stays educated on the latest practices in the industry such as seo algorithms, customer engagement, ctr, lead generation, and analytics to name a few. We want to see your business perform better. It's the reason we work so hard. Our job isn't over until we are confident your business objectives have been met.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <div ng-include="'app/Partials/About.html'"></div>
     <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Services</h2>
-                    <!--<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>-->
-                </div>
-            </div>
-            <!-- Intercom Search Engine Optimzation -->
-            <div class="row text-center" id="intercomSearchEngineOptimzation">
-                <div class="col-lg-6 col-lg-offset-3">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Intercom Search Engine Optimization</h4>
-                    <p class="text-muted">Intercoms SEO strategy will help you drive business. We  improve traffic, visibility, and the ranking of your websites/webpage organic search results.</p>
-                </div>
-            </div>
-            <!-- Intercom Search Engine Optimzation -->
-            <div class="row text-center" id="paidSearchMarketing">
-                <div class="col-lg-6 col-lg-offset-3">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-dollar fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Paid Search Marketing (PPC)</h4>
-                    <p class="text-muted">Amplify your online presence. Reach higher qualified leads at the right moment.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div ng-include="'app/Partials/Services.html'"></div>
 
     <!-- Portfolio Grid Section -->
     <section id="portfolio" class="bg-light-gray">
