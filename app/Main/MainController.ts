@@ -2,11 +2,13 @@ module App.Contact {
     import ModalService = Services.ModalService;
 
     export class MainController {
-        firstName: string;
-        lastName: string;
+        name: string;
+        company: string;
         email: string;
+        phoneNumber: string;
         message: string;
         attemptedSend: boolean = false;
+        today: Date = new Date();
 
         static $inject = ['$scope', '$http', 'ModalService'];
         constructor(public $scope: ng.IScope, public $http: ng.IHttpService, public modalService: ModalService){
@@ -24,9 +26,10 @@ module App.Contact {
             if(form.$valid){
                 /* Create data */
                 var data = {
-                    firstName: this.firstName,
-                    lastName: this.lastName,
+                    name: this.name,
+                    company: this.company,
                     email: this.email,
+                    phoneNumber: this.phoneNumber,
                     message: this.message
                 };
                 this.$http({
@@ -36,9 +39,10 @@ module App.Contact {
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 }).success((result: any) => {
                     /* Reset input fields. */
-                    this.firstName = '';
-                    this.lastName = '';
+                    this.name = '';
+                    this.company = '';
                     this.email = '';
+                    this.phoneNumber = '';
                     this.message = '';
                     /* Reset form. */
                     form.$setPristine();
@@ -50,6 +54,7 @@ module App.Contact {
                 this.modalService.displayToast('Error', 'There were erros in your submission.', 'danger');
             }
         }
+
     }
     angular.module('quinntenfuller').controller('MainController', MainController);
 }

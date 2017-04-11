@@ -4,11 +4,13 @@ declare module App.Contact {
         $scope: ng.IScope;
         $http: ng.IHttpService;
         modalService: ModalService;
-        firstName: string;
-        lastName: string;
+        name: string;
+        company: string;
         email: string;
+        phoneNumber: string;
         message: string;
         attemptedSend: boolean;
+        today: Date;
         static $inject: string[];
         constructor($scope: ng.IScope, $http: ng.IHttpService, modalService: ModalService);
         scroll: (href: string) => void;

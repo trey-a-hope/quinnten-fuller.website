@@ -9,6 +9,7 @@ var App;
                 this.$http = $http;
                 this.modalService = modalService;
                 this.attemptedSend = false;
+                this.today = new Date();
                 this.scroll = function (href) {
                     $('html, body').stop().animate({
                         scrollTop: ($(href).offset().top - 80)
@@ -19,9 +20,10 @@ var App;
                     _this.attemptedSend = true;
                     if (form.$valid) {
                         var data = {
-                            firstName: _this.firstName,
-                            lastName: _this.lastName,
+                            name: _this.name,
+                            company: _this.company,
                             email: _this.email,
+                            phoneNumber: _this.phoneNumber,
                             message: _this.message
                         };
                         _this.$http({
@@ -30,9 +32,10 @@ var App;
                             data: data,
                             headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
                         }).success(function (result) {
-                            _this.firstName = '';
-                            _this.lastName = '';
+                            _this.name = '';
+                            _this.company = '';
                             _this.email = '';
+                            _this.phoneNumber = '';
                             _this.message = '';
                             form.$setPristine();
                             _this.modalService.displayToast('Got It', 'Message sent, I will respond shortly.', 'success');
