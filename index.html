@@ -37,7 +37,7 @@
     <script src="plugins/ng-toast/dist/ngToast.min.js"></script>
 
     <!-- Bootstrap Core JS -->
-    <script src="js/scripts/ui-bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>  
+    <script src="js/scripts/ui-bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
@@ -50,12 +50,18 @@
     <!-- Services -->
     <script src="app/Services/ModalService.js"></script>
 
+    <!-- Models -->
+    <script src="app/Models/Clientele.js"></script>
+    
+    <!-- Modal -->
+    <script src="app/Modal/NewSEOModalController.js"></script>
+
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    
+
     <script>
     $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();   
+        $('[data-toggle="tooltip"]').tooltip();
     });
     </script>
 
@@ -112,13 +118,13 @@
         <div class="container"
              style="padding-top: 180px !important; padding-bottom: 180px !important; cursor: pointer">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
-                    <img src="img/logo1.png" alt="" style="width: 100%" 
+                    <img src="img/logo4.png" alt="" style="width: 100%" 
                     ng-click="vm.scroll('#reachMore')"/>
                     <h4 style="padding-top: 20px; color: black">because position matters</h4>
                  </div>
         </div>
     </header>
-    
+
     <!-- Reach More Section -->
     <div static-include="app/Partials/ReachMore.html"></div>
     <!-- About Section -->

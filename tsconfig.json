@@ -10,7 +10,9 @@
     "files": [
         "app/Main/MainController.ts",
         "app/Modules/QuinntenFuller.ts",
+        "app/Models/Clientele.ts",
         "app/Services/ModalService.ts",
+        "app/Modal/NewSEOModalController.ts",
         "js/scripts/typings/angular.d.ts",
         "js/scripts/typings/angular-route.d.ts",
         "js/scripts/typings/angular-ui-bootstrap.d.ts",
