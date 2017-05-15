@@ -12,6 +12,7 @@
         "app/Modules/QuinntenFuller.ts",
         "app/Models/Clientele.ts",
         "app/Services/ModalService.ts",
+        "app/Services/MyFirebaseRef.ts",
         "app/Modal/NewSEOModalController.ts",
         "js/scripts/typings/angular.d.ts",
         "js/scripts/typings/angular-route.d.ts",

@@ -180,14 +180,14 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-custom .navbar-brand {
   color: white;
-  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+  /*font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;*/
 }
 
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
 .navbar-custom .navbar-brand.active {
-  color: #0380fc;
+  color: white;
 }
 
 .navbar-custom .navbar-collapse {
@@ -218,7 +218,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
-  color: #0045d2;
+  color: white;
   outline: none;
 }
 

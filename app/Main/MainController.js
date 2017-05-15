@@ -63,7 +63,7 @@ var App;
                 c1.date = new Date();
                 this.clienteleList.push(c1);
                 var c2 = new Clientele();
-                c2.text = "This is another example, with a different date as well..";
+                c2.text = "This is another example, with a different date as well.";
                 c2.category = "AUTHENCTIC INTELLIGENCE";
                 var tomorrow = new Date();
                 tomorrow.setDate(tomorrow.getDate() + 5);

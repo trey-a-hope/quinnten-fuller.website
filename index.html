@@ -10,6 +10,12 @@
 
     <title>Intercom</title>
 
+    <!-- Wow.js -->
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -36,10 +42,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
     <script src="plugins/ng-toast/dist/ngToast.min.js"></script>
 
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+
     <!-- Bootstrap Core JS -->
     <script src="js/scripts/ui-bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 
     <!-- Modules -->
     <script src="app/Modules/QuinntenFuller.js"></script>
@@ -49,6 +57,7 @@
 
     <!-- Services -->
     <script src="app/Services/ModalService.js"></script>
+    <script src="app/Services/MyFirebaseRef.js"></script>
 
     <!-- Models -->
     <script src="app/Models/Clientele.js"></script>
@@ -117,10 +126,10 @@
     <header>
         <div class="container"
              style="padding-top: 180px !important; padding-bottom: 180px !important; cursor: pointer">
-                <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 wow slideInRight">
                     <img src="img/logo4.png" alt="" style="width: 100%" 
                     ng-click="vm.scroll('#reachMore')"/>
-                    <h4 style="padding-top: 20px; color: black">because position matters</h4>
+                    <h4 style="padding-top: 20px; color: white">because position matters</h4>
                  </div>
         </div>
     </header>
