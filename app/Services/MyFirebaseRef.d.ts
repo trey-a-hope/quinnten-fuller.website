@@ -1,14 +1,10 @@
 declare module App.Services {
     class MyFirebaseRef {
-        $scope: any;
+        private config;
+        private firebase;
         private databaseRef;
-        private campsDatabaseRef;
-        private highschoolsDatabaseRef;
-        private usersDatabaseRef;
-        private videosDatabaseRef;
-        private resourcesDatabaseRef;
-        private storageRef;
-        static $inject: string[];
-        constructor($scope: any);
+        clienteleDatabaseRef: Firebase;
+        storageRef: Firebase;
+        constructor();
     }
 }

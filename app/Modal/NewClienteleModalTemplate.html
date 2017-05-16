@@ -1,0 +1,85 @@
+<div class="modal-header">
+    <h3 class="modal-title text-center">New Clientele</h3>
+</div>
+<div class="modal-body">
+    <ng-form name="newClienteleForm" id="newClienteleForm" novalidate>
+        <!-- Text -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div ng-class="{ 'has-error' : newClienteleForm.text.$invalid && (newClienteleForm.text.$dirty || vm.attemptedSend)}">
+                    <textarea ng-model="vm.clientele.text" 
+                        id="text"
+                        name="text"
+                        class="form-control"
+                        placeholder="Info about Clientele"
+                        required>
+                    </textarea>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- Category -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div ng-class="{ 'has-error' : newClienteleForm.category.$invalid && (newClienteleForm.category.$dirty || vm.attemptedSend)}">
+                    <input ng-model="vm.clientele.category" 
+                        id="category"
+                        name="category"
+                        class="form-control"
+                        placeholder="Category"
+                        required></input>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- Twitter Link -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div ng-class="{ 'has-error' : newClienteleForm.twitterLink.$invalid && (newClienteleForm.twitterLink.$dirty || vm.attemptedSend)}">
+                    <input ng-model="vm.clientele.twitterLink" 
+                        id="twitterLink"
+                        name="twitterLink"
+                        class="form-control"
+                        placeholder="Twitter Link"
+                        required></input>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- Facebook Link -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div ng-class="{ 'has-error' : newClienteleForm.facebookLink.$invalid && (newClienteleForm.facebookLink.$dirty || vm.attemptedSend)}">
+                    <input ng-model="vm.clientele.facebookLink" 
+                        id="facebookLink"
+                        name="facebookLink"
+                        class="form-control"
+                        placeholder="Facebook Link"
+                        required></input>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- LinkedIn Link -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div ng-class="{ 'has-error' : newClienteleForm.linkedinLink.$invalid && (newClienteleForm.linkedinLink.$dirty || vm.attemptedSend)}">
+                    <input ng-model="vm.clientele.linkedinLink" 
+                        id="linkedinLink"
+                        name="linkedinLink"
+                        class="form-control"
+                        placeholder="LinkedIn Link"
+                        required></input>
+                </div>
+            </div>
+        </div>
+    </ng-form>
+</div>
+<div class="modal-footer">
+    <div class="col-xs-4 col-sm-2 pull-right">
+        <button class="btn btn-primary width-full" ng-click="vm.submit(newClienteleForm)">Submit</button>
+    </div>
+    <div class="col-xs-4 col-sm-2 pull-right">
+        <button class="btn btn-primary width-full" ng-click="vm.cancel()">Cancel</button>
+    </div>
+</div>

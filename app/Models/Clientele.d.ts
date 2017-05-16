@@ -3,7 +3,6 @@ declare module App.Models {
         text: string;
         date: Date;
         category: string;
-        sharelink: string;
         twitterLink: string;
         facebookLink: string;
         linkedinLink: string;
