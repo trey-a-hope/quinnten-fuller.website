@@ -8,14 +8,34 @@ module App.Modal {
         clientele: Clientele = new Clientele();
         attemptedSend: boolean = false;
 
-        static $inject = ['$modalInstance', '$q','ModalService', 'MyFirebaseRef'];
-        constructor(public $modalInstance: ng.ui.bootstrap.IModalServiceInstance, public $q: ng.IQService, public modalService: ModalService, public myFirebaseRef: MyFirebaseRef) { 
+        static $inject = ['$modalInstance', '$q','ModalService', 'MyFirebaseRef', 'isEdit', 'clientele'];
+        constructor(public $modalInstance: ng.ui.bootstrap.IModalServiceInstance, 
+            public $q: ng.IQService, 
+            public modalService: ModalService, 
+            public myFirebaseRef: MyFirebaseRef,
+            public isEdit: boolean,
+            public _clientele: Clientele) { 
+                if(this.isEdit){
+                    this.clientele = _clientele;
+                }
+        }
+
+        update = (form: any): void => {
+            this.attemptedSend = true;
+            if(form.$valid){
+                this.myFirebaseRef.clienteleDatabaseRef.child(this.clientele.id).update(this.clientele);
+                this.modalService.displayToast('Success', 'Updated clientele.', 'success');
+                this.$modalInstance.close();
+            }else{
+                this.modalService.displayToast('Sorry', 'There were errors in your submission.', 'danger')
+            }
         }
 
         submit = (form: any): void => {
             this.attemptedSend = true;
             if(form.$valid){
                 var newPostKey: string = this.myFirebaseRef.clienteleDatabaseRef.push().key.toString();
+                this.clientele.id = newPostKey;
                 this.myFirebaseRef.clienteleDatabaseRef.child(newPostKey.toString()).update(this.clientele);
                 this.modalService.displayToast('Success', 'Added new clientele.', 'success');
                 this.$modalInstance.close();

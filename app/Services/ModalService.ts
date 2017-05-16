@@ -15,6 +15,32 @@ module App.Services {
                 content: '<strong>' + title + '</strong>' + ' ' +  subTitle
             });
         }
+
+        displayConfirmation = (confirmationMessage: string, confirmationHeader: string, confirmButtonText: string) => {
+           var deferred = this.$q.defer<boolean>();
+           this.$modal.open({
+               templateUrl: 'app/Modal/DisplayConfirmationModalTemplate.html',
+               controller: 'DisplayConfirmationModalController as vm',
+               size: 'md',
+               backdrop: 'static',
+               resolve: {
+                   deferred: () => {
+                       return deferred;
+                   },
+                   confirmationMessage: () => {
+                       return confirmationMessage;
+                   },
+                   confirmationHeader: () => {
+                       return confirmationHeader;
+                   },
+                   confirmButtonText: () => {
+                       return confirmButtonText;
+                   }
+               }
+           });
+
+           return deferred.promise;
+       }
     }
 
     angular.module('quinntenfuller').service('ModalService', ModalService);

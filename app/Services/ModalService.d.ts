@@ -7,5 +7,6 @@ declare module App.Services {
         static $inject: string[];
         constructor($modal: ng.ui.bootstrap.IModalService, $q: ng.IQService, ngToast: any);
         displayToast: (title: string, subTitle: string, toastType: string) => void;
+        displayConfirmation: (confirmationMessage: string, confirmationHeader: string, confirmButtonText: string) => ng.IPromise<boolean>;
     }
 }

@@ -5,7 +5,7 @@ var App;
         var LoginService = (function () {
             function LoginService() {
                 var _this = this;
-                this.loggedIn = true;
+                this.loggedIn = false;
                 this.login = function () {
                     _this.loggedIn = true;
                 };

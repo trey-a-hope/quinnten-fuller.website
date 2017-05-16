@@ -56,7 +56,10 @@
     <script src="app/Modules/QuinntenFuller.js"></script>
 
     <!-- Controllers -->
-    <script src="app/Controllers/ClienteleController.js"></script>
+    <script src="app/Pages/Contact/ContactController.js"></script>
+    <script src="app/Pages/Clientele/ClienteleController.js"></script>
+    <script src="app/Pages/Services/ServicesController.js"></script>
+    <script src="app/Modal/DisplayConfirmationModalController.js"></script>
     <script src="app/Main/MainController.js"></script>
     <script src="app/Modal/NewClienteleModalController.js"></script>
     <script src="app/Modal/NewSEOModalController.js"></script>
@@ -89,7 +92,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Intercom</a>
+                <a class="navbar-brand page-scroll" href="#page-top" ng-click="vm.incrementClickCount()">Intercom</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -136,17 +139,17 @@
     </header>
 
     <!-- Reach More Section -->
-    <div static-include="app/Partials/ReachMore.html"></div>
+    <div static-include="app/Pages/ReachMore/ReachMore.html"></div>
     <!-- About Section -->
-    <div static-include="app/Partials/About.html"></div>
+    <div static-include="app/Pages/About/About.html"></div>
     <!-- Services Section -->
-    <div static-include="app/Partials/Services.html"></div>
+    <div static-include="app/Pages/Services/Services.html"></div>
     <!-- Clientele Section -->
-    <div static-include="app/Partials/Clientele.html"></div>
+    <div static-include="app/Pages/Clientele/Clientele.html"></div>
     <!-- Team Section -->
-    <div static-include="app/Partials/Team.html"></div>
+    <div static-include="app/Pages/Team/Team.html"></div>
     <!-- Contact Section -->
-    <div static-include="app/Partials/Contact.html"></div>
+    <div static-include="app/Pages/Contact/Contact.html"></div>
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>

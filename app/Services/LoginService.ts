@@ -1,6 +1,6 @@
 module App.Services {  
     export class LoginService {
-        private loggedIn: boolean = true;
+        private loggedIn: boolean = false;
         constructor(){
 
         }

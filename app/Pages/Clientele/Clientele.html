@@ -56,10 +56,10 @@
                             </li>
                         </ul>
                     </div>
-                    <button class="btn btn-success" ng-show="vm.loginService.isLoggedIn()" ng-click="vm.updateClientele()">
+                    <button class="btn btn-success" ng-show="vm.loginService.isLoggedIn()" ng-click="vm.editClientele(clientele)">
                         Update Clientele {{ $index + 1 }}
                     </button>
-                    <button class="btn btn-danger" ng-show="vm.loginService.isLoggedIn()" ng-click="vm.deleteClientele()">
+                    <button class="btn btn-danger" ng-show="vm.loginService.isLoggedIn()" ng-click="vm.deleteClientele(clientele)">
                         Delete Clientele {{ $index + 1 }}
                     </button>
                     <hr/>

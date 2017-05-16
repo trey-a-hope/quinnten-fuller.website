@@ -7,10 +7,13 @@ declare module App.Modal {
         $q: ng.IQService;
         modalService: ModalService;
         myFirebaseRef: MyFirebaseRef;
+        isEdit: boolean;
+        _clientele: Clientele;
         clientele: Clientele;
         attemptedSend: boolean;
         static $inject: string[];
-        constructor($modalInstance: ng.ui.bootstrap.IModalServiceInstance, $q: ng.IQService, modalService: ModalService, myFirebaseRef: MyFirebaseRef);
+        constructor($modalInstance: ng.ui.bootstrap.IModalServiceInstance, $q: ng.IQService, modalService: ModalService, myFirebaseRef: MyFirebaseRef, isEdit: boolean, _clientele: Clientele);
+        update: (form: any) => void;
         submit: (form: any) => void;
         cancel: () => void;
     }

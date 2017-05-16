@@ -8,13 +8,16 @@
         "sourceMap": true
     },
     "files": [
-        "app/Controllers/ClienteleController.ts",
+        "app/Pages/Clientele/ClienteleController.ts",
+        "app/Pages/Contact/ContactController.ts",
+        "app/Pages/Services/ServicesController.ts",
         "app/Main/MainController.ts",
         "app/Modules/QuinntenFuller.ts",
         "app/Models/Clientele.ts",
         "app/Services/LoginService.ts",
         "app/Services/ModalService.ts",
         "app/Services/MyFirebaseRef.ts",
+        "app/Modal/DisplayConfirmationModalController.ts",
         "app/Modal/NewClienteleModalController.ts",
         "app/Modal/NewSEOModalController.ts",
         "js/scripts/typings/angular.d.ts",

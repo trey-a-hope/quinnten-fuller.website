@@ -19,6 +19,30 @@ var App;
                         content: '<strong>' + title + '</strong>' + ' ' + subTitle
                     });
                 };
+                this.displayConfirmation = function (confirmationMessage, confirmationHeader, confirmButtonText) {
+                    var deferred = _this.$q.defer();
+                    _this.$modal.open({
+                        templateUrl: 'app/Modal/DisplayConfirmationModalTemplate.html',
+                        controller: 'DisplayConfirmationModalController as vm',
+                        size: 'md',
+                        backdrop: 'static',
+                        resolve: {
+                            deferred: function () {
+                                return deferred;
+                            },
+                            confirmationMessage: function () {
+                                return confirmationMessage;
+                            },
+                            confirmationHeader: function () {
+                                return confirmationHeader;
+                            },
+                            confirmButtonText: function () {
+                                return confirmButtonText;
+                            }
+                        }
+                    });
+                    return deferred.promise;
+                };
             }
             ModalService.$inject = ['$modal', '$q', 'ngToast'];
             return ModalService;
