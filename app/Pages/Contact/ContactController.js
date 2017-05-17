@@ -5,32 +5,23 @@ var App;
         var Contact;
         (function (Contact) {
             var ContactController = (function () {
-                function ContactController($modal, $http, myFirebaseRef, loginService, $scope, modalService) {
+                function ContactController($modal, $http, myFirebaseRef, $scope, modalService, emailService) {
                     var _this = this;
                     this.$modal = $modal;
                     this.$http = $http;
                     this.myFirebaseRef = myFirebaseRef;
-                    this.loginService = loginService;
                     this.$scope = $scope;
                     this.modalService = modalService;
+                    this.emailService = emailService;
                     this.attemptedSend = false;
-                    this.today = new Date();
                     this.sendEmail = function (form) {
                         _this.attemptedSend = true;
                         if (form.$valid) {
-                            var data = {
-                                name: _this.name,
-                                company: _this.company,
-                                email: _this.email,
-                                phoneNumber: _this.phoneNumber,
-                                message: _this.message
-                            };
-                            _this.$http({
-                                method: 'POST',
-                                url: 'php/sendEmail.php',
-                                data: data,
-                                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-                            }).success(function (result) {
+                            _this.emailService.sendEmail('trey.a.hope@gmail.com', 'You Have a New Contact - ' + _this.name, 'Company: ' + _this.company + '\n' +
+                                'Email: ' + _this.email + '\n' +
+                                'Phone Number: ' + _this.phoneNumber + '\n' +
+                                'Message: ' + _this.message)
+                                .then(function (result) {
                                 _this.name = '';
                                 _this.company = '';
                                 _this.email = '';
@@ -38,7 +29,7 @@ var App;
                                 _this.message = '';
                                 form.$setPristine();
                                 _this.modalService.displayToast('Got It', 'Message sent, I will respond shortly.', 'success');
-                            }).error(function (error) {
+                            }).catch(function (error) {
                                 _this.modalService.displayToast('Error', error.message, 'danger');
                             });
                         }
@@ -47,7 +38,7 @@ var App;
                         }
                     };
                 }
-                ContactController.$inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService'];
+                ContactController.$inject = ['$modal', '$http', 'MyFirebaseRef', '$scope', 'ModalService', 'EmailService'];
                 return ContactController;
             })();
             Contact.ContactController = ContactController;
