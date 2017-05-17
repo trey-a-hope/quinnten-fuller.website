@@ -13,6 +13,7 @@ var App;
                 firebase.apps.length === 0 ? this.firebase = firebase.initializeApp(this.config) : this.firebase = firebase.apps[0];
                 this.databaseRef = this.firebase.database().ref();
                 this.clienteleDatabaseRef = this.databaseRef.child('Clientele');
+                this.teamDatabaseRef = this.databaseRef.child('Team');
                 this.storageRef = this.firebase.storage().ref();
             }
             return MyFirebaseRef;

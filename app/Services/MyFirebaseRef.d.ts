@@ -4,7 +4,8 @@ declare module App.Services {
         private firebase;
         private databaseRef;
         clienteleDatabaseRef: Firebase;
-        storageRef: Firebase;
+        teamDatabaseRef: Firebase;
+        storageRef: any;
         constructor();
     }
 }

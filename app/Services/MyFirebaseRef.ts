@@ -10,12 +10,14 @@ module App.Services {
         private firebase: any;       
         private databaseRef: Firebase;
         public clienteleDatabaseRef: Firebase;
-        public storageRef: Firebase;
+        public teamDatabaseRef: Firebase;
+        public storageRef: any;
 
         constructor() {
             firebase.apps.length === 0 ? this.firebase = firebase.initializeApp(this.config) : this.firebase = firebase.apps[0];
             this.databaseRef = this.firebase.database().ref();
             this.clienteleDatabaseRef = this.databaseRef.child('Clientele');
+            this.teamDatabaseRef = this.databaseRef.child('Team');
             this.storageRef = this.firebase.storage().ref();   
          }
     }

@@ -8,9 +8,9 @@
             <div class="row">
                 <div class="col-md-6 text-center">
                     <div class="team-member">
-                        <img src="img/team/1.jpg" class="img-responsive img-circle" alt=""/>
+                        <img ng-src="{{ vm.profileImageUrl }}" class="img-responsive img-circle" alt=""/>
                         <h4>Quinnten Fuller</h4>
-                        <p class="text-muted">TODO: YOUR POSITION HERE</p>
+                        <p class="text-muted">Intercom CEO</p>
                         <ul class="list-inline social-buttons">
                             <li><a href="#"><i class="fa fa-twitter"></i></a>
                             </li>
@@ -26,6 +26,11 @@
                     Most people work because they have to. For Quinnten, he works because he loves to. When your passion becomes your career it's truly a blessing. After graduating from Northern Kentucky University with a bachelor's degree in Integrative Studies, Quinnten combined his marketing education and experience to found Intercom in Miami, Florida. He enjoys sharing his knowledge especially in search engine marketing and analytics to businesses around the world. If Quinnten isn't working, he's probably skateboarding on the beach boardwalk, playing basketball or preparing a speech for an upcoming seminar. 
                     </h3>
                 </div>
+            </div>
+            <div class="row" ng-show="vm.loginService.isLoggedIn()">
+                <input type="file" id="file-chooser" required/>
+                <button class="btn btn-success" ng-click="vm.uploadImage()">Upload Image</button>
+                <p><strong>Note</strong>: Best to upload a square image for best visual performance. MUST be an image.</p>
             </div>
         </div>
     </section>
