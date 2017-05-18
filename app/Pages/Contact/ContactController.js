@@ -14,6 +14,8 @@ var App;
                     this.modalService = modalService;
                     this.emailService = emailService;
                     this.attemptedSend = false;
+                    this.phoneNumberRegex = /^\d{10}$/;
+                    this.emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                     this.sendEmail = function (form) {
                         _this.attemptedSend = true;
                         if (form.$valid) {

@@ -11,6 +11,9 @@ module App.Modal {
         phoneNumber: string;
         message: string;
         attemptedSend: boolean = false;
+        /* Regex */
+        phoneNumberRegex: RegExp = /^\d{10}$/;
+        emailRegex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         static $inject = ['$modalInstance', '$q', '$http', 'ModalService', 'EmailService'];
         constructor(public $modalInstance: ng.ui.bootstrap.IModalServiceInstance, 
@@ -40,6 +43,7 @@ module App.Modal {
                         /* Reset form. */
                         form.$setPristine();
                         this.modalService.displayToast('Got It', 'Message sent, I will respond shortly.', 'success');
+                        this.$modalInstance.close();
                     }).catch((error: any) => {
                         this.modalService.displayToast('Error', error.message, 'danger');
                     });

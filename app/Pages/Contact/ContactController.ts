@@ -10,6 +10,9 @@ module App.Pages.Contact {
         phoneNumber: string;
         message: string;
         attemptedSend: boolean = false;
+        /* Regex */
+        phoneNumberRegex: RegExp = /^\d{10}$/;
+        emailRegex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         static $inject = ['$modal', '$http', 'MyFirebaseRef', '$scope', 'ModalService', 'EmailService'];
         constructor(public $modal: ng.ui.bootstrap.IModalService, 

@@ -13,6 +13,8 @@ declare module App.Modal {
         phoneNumber: string;
         message: string;
         attemptedSend: boolean;
+        phoneNumberRegex: RegExp;
+        emailRegex: RegExp;
         static $inject: string[];
         constructor($modalInstance: ng.ui.bootstrap.IModalServiceInstance, $q: ng.IQService, $http: ng.IHttpService, modalService: ModalService, emailService: EmailService);
         acknowledge: (form: any) => void;

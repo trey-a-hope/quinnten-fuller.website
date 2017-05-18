@@ -13,8 +13,10 @@ module App.Pages.Team {
             public loginService: LoginService,
             public $scope: any,
             public modalService: ModalService){
+                console.log('Fetching image url...');
                 this.myFirebaseRef.teamDatabaseRef.child('ImageUrl').on('value', (snapshot: FirebaseDataSnapshot) => {
-                    this.profileImageUrl = snapshot.val()
+                    this.profileImageUrl = snapshot.val();
+                    console.log(this.profileImageUrl);
                     if(!this.$scope.$$phase){
                         this.$scope.$apply();
                     }

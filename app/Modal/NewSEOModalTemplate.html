@@ -18,13 +18,27 @@
                             </div>
                             <div class="col-xs-12">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" ng-model="vm.email" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <input type="email" 
+                                        class="form-control" 
+                                        ng-model="vm.email" 
+                                        placeholder="Your Email *" 
+                                        id="email" 
+                                        required 
+                                        data-validation-required-message="Please enter your email address."
+                                        ng-pattern="vm.emailRegex">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-xs-12">
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" ng-model="vm.phoneNumber" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <input type="tel" 
+                                        class="form-control" 
+                                        ng-model="vm.phoneNumber" 
+                                        placeholder="Your Phone * (i.e. 9382949933)" 
+                                        id="phone" 
+                                        required 
+                                        data-validation-required-message="Please enter your phone number."
+                                        ng-pattern="vm.phoneNumberRegex">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>

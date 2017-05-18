@@ -11,6 +11,8 @@ var App;
                 this.modalService = modalService;
                 this.emailService = emailService;
                 this.attemptedSend = false;
+                this.phoneNumberRegex = /^\d{10}$/;
+                this.emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 this.acknowledge = function (form) {
                     _this.attemptedSend = true;
                     if (form.$valid) {
@@ -26,6 +28,7 @@ var App;
                             _this.message = '';
                             form.$setPristine();
                             _this.modalService.displayToast('Got It', 'Message sent, I will respond shortly.', 'success');
+                            _this.$modalInstance.close();
                         }).catch(function (error) {
                             _this.modalService.displayToast('Error', error.message, 'danger');
                         });
