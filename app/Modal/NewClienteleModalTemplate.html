@@ -32,6 +32,23 @@
             </div>
         </div>
         <br>
+        <!-- Date -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div ng-class="{ 'has-error' : clienteleForm.date.$invalid && (clienteleForm.date.$dirty || vm.attemptedSend)}">
+                    <div class="datepicker" date-format="MMM dd, yyyy" date-month-title="selected year" button-prev="<i class='fa fa-arrow-left'></i>" button-next="<i class='fa fa-arrow-right'></i>">
+                        <input ng-model="vm.clientele.date" 
+                            id="date"
+                            name="date"
+                            class="form-control" 
+                            placeholder="Date"
+                            readonly
+                            required/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
         <!-- Twitter Link -->
         <div class="row">
             <div class="col-xs-12">

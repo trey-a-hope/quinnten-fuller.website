@@ -58,6 +58,7 @@ var App;
                     this.shareClientele = function () {
                         alert("TODO: Share");
                     };
+                    this.addClientele();
                     this.myFirebaseRef.clienteleDatabaseRef.on('value', function (snapshot) {
                         _this.clienteleList = snapshot.val();
                         if (!_this.$scope.$$phase) {

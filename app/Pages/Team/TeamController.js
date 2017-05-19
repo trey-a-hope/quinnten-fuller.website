@@ -32,10 +32,8 @@ var App;
                             ;
                         }
                     };
-                    console.log('Fetching image url...');
                     this.myFirebaseRef.teamDatabaseRef.child('ImageUrl').on('value', function (snapshot) {
                         _this.profileImageUrl = snapshot.val();
-                        console.log(_this.profileImageUrl);
                         if (!_this.$scope.$$phase) {
                             _this.$scope.$apply();
                         }

@@ -13,7 +13,8 @@ var QuinntenFuller = (function () {
             'ui.bootstrap',
             'ngSanitize',
             'ngAnimate',
-            'ngToast'
+            'ngToast',
+            '720kb.datepicker'
         ])
             .config(['ngToastProvider', function (ngToastProvider) {
                 ngToastProvider.configure({

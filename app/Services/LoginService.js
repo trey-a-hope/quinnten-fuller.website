@@ -3,8 +3,9 @@ var App;
     var Services;
     (function (Services) {
         var LoginService = (function () {
-            function LoginService() {
+            function LoginService(modalService) {
                 var _this = this;
+                this.modalService = modalService;
                 this.loggedIn = false;
                 this.login = function () {
                     _this.loggedIn = true;
@@ -15,7 +16,9 @@ var App;
                 this.isLoggedIn = function () {
                     return _this.loggedIn;
                 };
+                this.loggedIn ? this.modalService.displayToast('Dont Forget', 'Turn login service off after testing.', 'success') : 'f';
             }
+            LoginService.$inject = ['ModalService'];
             return LoginService;
         })();
         Services.LoginService = LoginService;

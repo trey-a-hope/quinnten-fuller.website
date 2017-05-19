@@ -17,7 +17,8 @@ class QuinntenFuller{
             'ui.bootstrap',
             'ngSanitize',
             'ngAnimate',
-            'ngToast'
+            'ngToast',
+            '720kb.datepicker'
         ])
         /* Config */
         .config(['ngToastProvider', (ngToastProvider: any) => {
