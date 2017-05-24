@@ -4,6 +4,12 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
+
+/* Dark Primary : #1986c9 */
+
+
+/* Light Primary : #269fe8 */
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -18,7 +24,7 @@ body {
 }
 
 .text-primary {
-  color: #0045d2;
+  color: #1986c9;
 }
 
 p {
@@ -39,14 +45,14 @@ a.active {
 }
 
 a {
-  color: #0045d2;
+  color: #1986c9;
 }
 
 a:hover,
 a:focus,
 a:active,
 a.active {
-  color: #0380fc;
+  color: #269fe8;
 }
 
 h1,
@@ -74,8 +80,8 @@ h6 {
 
 .btn-primary {
   color: white;
-  background-color: #0045d2;
-  border-color: #0045d2;
+  background-color: #1986c9;
+  border-color: #1986c9;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -87,8 +93,8 @@ h6 {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: white;
-  background-color: #0380fc;
-  border-color: #0045d2;
+  background-color: #269fe8;
+  border-color: #1986c9;
 }
 
 .btn-primary:active,
@@ -112,19 +118,19 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #0045d2;
-  border-color: #0045d2;
+  background-color: #1986c9;
+  border-color: #1986c9;
 }
 
 .btn-primary .badge {
-  color: #0045d2;
+  color: #1986c9;
   background-color: white;
 }
 
 .btn-xl {
   color: white;
-  background-color: #0045d2;
-  border-color: #0045d2;
+  background-color: #1986c9;
+  border-color: #1986c9;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -139,8 +145,8 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
   color: white;
-  background-color: #0380fc;
-  border-color: #0045d2;
+  background-color: #269fe8;
+  border-color: #1986c9;
 }
 
 .btn-xl:active,
@@ -164,12 +170,12 @@ fieldset[disabled] .btn-xl:active,
 .btn-xl.disabled.active,
 .btn-xl[disabled].active,
 fieldset[disabled] .btn-xl.active {
-  background-color: #0045d2;
-  border-color: #0045d2;
+  background-color: #1986c9;
+  border-color: #1986c9;
 }
 
 .btn-xl .badge {
-  color: #0045d2;
+  color: #1986c9;
   background-color: white;
 }
 
@@ -195,8 +201,8 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-custom .navbar-toggle {
-  background-color: #0045d2;
-  border-color: #0045d2;
+  background-color: #1986c9;
+  border-color: #1986c9;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   color: white;
@@ -205,7 +211,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
-  background-color: #0045d2;
+  background-color: #1986c9;
 }
 
 .navbar-custom .nav li a {
@@ -225,13 +231,13 @@ fieldset[disabled] .btn-xl.active {
 .navbar-custom .navbar-nav>.active>a {
   border-radius: 0;
   color: white;
-  background-color: #0045d2;
+  background-color: #1986c9;
 }
 
 .navbar-custom .navbar-nav>.active>a:hover,
 .navbar-custom .navbar-nav>.active>a:focus {
   color: white;
-  background-color: #0380fc;
+  background-color: #269fe8;
 }
 
 @media (min-width: 768px) {
@@ -490,7 +496,7 @@ section h3.section-subheading {
   height: 80px;
   position: absolute;
   z-index: 100;
-  background-color: #0045d2;
+  background-color: #1986c9;
   color: white;
   border-radius: 100%;
   border: 7px solid #f1f1f1;
@@ -668,7 +674,7 @@ section#contact .form-group textarea.form-control {
 }
 
 section#contact .form-control:focus {
-  border-color: #0045d2;
+  border-color: #1986c9;
   box-shadow: none;
 }
 
@@ -748,7 +754,7 @@ ul.social-buttons li a {
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-  background-color: #0045d2;
+  background-color: #1986c9;
 }
 
 .btn:focus,
@@ -846,12 +852,12 @@ ul.social-buttons li a:active {
 
 ::-moz-selection {
   text-shadow: none;
-  background: #0045d2;
+  background: #1986c9;
 }
 
 ::selection {
   text-shadow: none;
-  background: #0045d2;
+  background: #1986c9;
 }
 
 img::selection {
@@ -863,5 +869,5 @@ img::-moz-selection {
 }
 
 body {
-  webkit-tap-highlight-color: #0045d2;
+  webkit-tap-highlight-color: #1986c9;
 }

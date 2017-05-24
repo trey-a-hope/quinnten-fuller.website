@@ -14,7 +14,6 @@ module App.Pages.Clientele {
             public loginService: LoginService,
             public $scope: any,
             public modalService: ModalService){
-                this.addClientele();
             this.myFirebaseRef.clienteleDatabaseRef.on('value', (snapshot: any) => {
                 this.clienteleList = snapshot.val();
                 /* Refresh UI. */
@@ -66,10 +65,6 @@ module App.Pages.Clientele {
                 })
                 .catch((error: any) => {})
                 .finally(() => {});
-        }
-
-        shareClientele = (): void => {
-            alert("TODO: Share");
         }
 
     }
