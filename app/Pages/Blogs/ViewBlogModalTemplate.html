@@ -1,8 +1,10 @@
 <div class="modal-header">
     <div class="row">
-        <div class="col-xs-12">
-            <h1 class="modal-title pull-left text-primary">{{ vm.blogs[vm.index].title }}</h1>
-            <span class="fa-stack fa-1x pull-right">
+        <div class="col-xs-11">
+            <h1 class="modal-title text-primary">{{ vm.blogs[vm.index].title }}</h1>
+        </div>
+        <div class="col-xs-1">
+            <span class="fa-stack fa-1x">
                 <i class="fa fa-circle fa-stack-2x text-primary"></i>
                 <i ng-click="vm.close()" class="fa fa-close fa-stack-1x fa-inverse cursor-pointer"></i>
             </span>
@@ -10,9 +12,6 @@
     </div>
     <h3>{{ vm.blogs[vm.index].subTitle }}</h3>
     <h5>Posted {{ vm.blogs[vm.index].postDateTime | date:'MMMM dd, yyyy' }}</h5>
-    
-
-
 </div>
 <div class="modal-body">
     <p ng-bind-html="vm.blogs[vm.index].html"></p>

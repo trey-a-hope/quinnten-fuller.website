@@ -11,9 +11,9 @@
         </div>
         <div class="row text-center">
             <div ng-repeat="blog in vm.blogs">
-                <div class="card col-xs-4">
+                <div class="card col-xs-12 col-md-4">
                     <div class="view overlay hm-white-slight">
-                        <img ng-src="{{ blog.coverImageUrl }}" class="img-fluid" alt="" max-height="200">
+                        <img ng-src="{{ blog.coverImageUrl }}" class="img-fluid" alt="">
                     </div>
                     <div class="card-block">
                         <h4 class="card-title">{{ blog.title }}</h4>
