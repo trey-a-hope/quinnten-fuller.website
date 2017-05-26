@@ -13,9 +13,9 @@ var App;
                     this.$scope = $scope;
                     this.modalService = modalService;
                 }
-                ReachMoreController.$inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService'];
                 return ReachMoreController;
-            })();
+            }());
+            ReachMoreController.$inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService'];
             ReachMore.ReachMoreController = ReachMoreController;
             angular.module('quinntenfuller').controller('ReachMoreController', ReachMoreController);
         })(ReachMore = Pages.ReachMore || (Pages.ReachMore = {}));

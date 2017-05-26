@@ -1,17 +1,21 @@
 module App.Blogs {
     import Blog = App.Models.Blog;
     class ViewBlogModalController {
-        public index: number;
-        public blogs: Array<Blog>;
 
         static $inject = ['$scope', 'index', 'blogs'];
-        constructor(public $scope: any, public _index: number, public _blogs: Array<Blog>) {
-            this.index = _index;
-            this.blogs = _blogs;
+        constructor(public $scope: any, public index: number, public blogs: Array<Blog>) {
         }
 
         close = () => {
             this.$scope.$dismiss(false);
+        }
+
+        next = (): void => {
+            this.index++;
+        }
+
+        previous = (): void => {
+            this.index--;
         }
 
         share = (provider: string): void => {

@@ -2,7 +2,8 @@ declare module App.Models {
     class Blog {
         id: string;
         title: string;
-        subTitle: string;
+        subtitle: string;
+        author: string;
         postDateTime: string;
         html: string;
         coverImageUrl: string;

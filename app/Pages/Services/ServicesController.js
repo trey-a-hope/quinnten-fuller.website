@@ -22,9 +22,9 @@ var App;
                         });
                     };
                 }
-                ServicesController.$inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService'];
                 return ServicesController;
-            })();
+            }());
+            ServicesController.$inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService'];
             Services.ServicesController = ServicesController;
             angular.module('quinntenfuller').controller('ServicesController', ServicesController);
         })(Services = Pages.Services || (Pages.Services = {}));

@@ -9,6 +9,7 @@
     },
     "files": [
         "app/Pages/About/AboutController.ts",
+        "app/Pages/Blogs/AddEditBlogModalController.ts",
         "app/Pages/Blogs/BlogsController.ts",
         "app/Pages/Blogs/ViewBlogModalController.ts",
         "app/Pages/Clientele/ClienteleController.ts",

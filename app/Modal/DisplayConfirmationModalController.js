@@ -19,9 +19,9 @@ var App;
                     _this.$scope.$dismiss(false);
                 };
             }
-            DisplayConfirmationModalController.$inject = ['$scope', 'confirmationMessage', 'confirmationHeader', 'confirmButtonText', 'deferred'];
             return DisplayConfirmationModalController;
-        })();
+        }());
+        DisplayConfirmationModalController.$inject = ['$scope', 'confirmationMessage', 'confirmationHeader', 'confirmButtonText', 'deferred'];
         angular.module('quinntenfuller').controller('DisplayConfirmationModalController', DisplayConfirmationModalController);
     })(Modal = App.Modal || (App.Modal = {}));
 })(App || (App = {}));

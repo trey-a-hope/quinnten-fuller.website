@@ -6,7 +6,7 @@ var App;
             function Blog() {
             }
             return Blog;
-        })();
+        }());
         Models.Blog = Blog;
     })(Models = App.Models || (App.Models = {}));
 })(App || (App = {}));

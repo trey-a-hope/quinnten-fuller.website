@@ -40,9 +40,9 @@ var App;
                         }
                     };
                 }
-                ContactController.$inject = ['$modal', '$http', 'MyFirebaseRef', '$scope', 'ModalService', 'EmailService'];
                 return ContactController;
-            })();
+            }());
+            ContactController.$inject = ['$modal', '$http', 'MyFirebaseRef', '$scope', 'ModalService', 'EmailService'];
             Contact.ContactController = ContactController;
             angular.module('quinntenfuller').controller('ContactController', ContactController);
         })(Contact = Pages.Contact || (Pages.Contact = {}));

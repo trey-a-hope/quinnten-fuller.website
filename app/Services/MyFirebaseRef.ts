@@ -11,6 +11,7 @@ module App.Services {
         private databaseRef: Firebase;
         public clienteleDatabaseRef: Firebase;
         public teamDatabaseRef: Firebase;
+        public blogDatabaseRef: Firebase;
         public storageRef: any;
 
         constructor() {
@@ -18,6 +19,7 @@ module App.Services {
             this.databaseRef = this.firebase.database().ref();
             this.clienteleDatabaseRef = this.databaseRef.child('Clientele');
             this.teamDatabaseRef = this.databaseRef.child('Team');
+            this.blogDatabaseRef = this.databaseRef.child('Blogs');
             this.storageRef = this.firebase.storage().ref();   
          }
     }

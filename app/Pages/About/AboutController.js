@@ -13,9 +13,9 @@ var App;
                     this.$scope = $scope;
                     this.modalService = modalService;
                 }
-                AboutController.$inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService'];
                 return AboutController;
-            })();
+            }());
+            AboutController.$inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService'];
             About.AboutController = AboutController;
             angular.module('quinntenfuller').controller('AboutController', AboutController);
         })(About = Pages.About || (Pages.About = {}));

@@ -45,9 +45,9 @@ var App;
                     this.clientele = _clientele;
                 }
             }
-            NewClienteleModalController.$inject = ['$modalInstance', '$q', 'ModalService', 'MyFirebaseRef', 'isEdit', 'clientele'];
             return NewClienteleModalController;
-        })();
+        }());
+        NewClienteleModalController.$inject = ['$modalInstance', '$q', 'ModalService', 'MyFirebaseRef', 'isEdit', 'clientele'];
         Modal.NewClienteleModalController = NewClienteleModalController;
         angular.module('quinntenfuller').controller('NewClienteleModalController', NewClienteleModalController);
     })(Modal = App.Modal || (App.Modal = {}));

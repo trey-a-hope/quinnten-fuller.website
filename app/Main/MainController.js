@@ -41,9 +41,9 @@ var App;
                     event.preventDefault();
                 };
             }
-            MainController.$inject = ['$modal', '$scope', '$http', 'ModalService', '$timeout', 'LoginService'];
             return MainController;
-        })();
+        }());
+        MainController.$inject = ['$modal', '$scope', '$http', 'ModalService', '$timeout', 'LoginService'];
         Contact.MainController = MainController;
         angular.module('quinntenfuller').controller('MainController', MainController);
     })(Contact = App.Contact || (App.Contact = {}));

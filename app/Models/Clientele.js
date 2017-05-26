@@ -6,7 +6,7 @@ var App;
             function Clientele() {
             }
             return Clientele;
-        })();
+        }());
         Models.Clientele = Clientele;
     })(Models = App.Models || (App.Models = {}));
 })(App || (App = {}));

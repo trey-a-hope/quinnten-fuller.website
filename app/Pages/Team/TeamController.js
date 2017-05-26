@@ -39,9 +39,9 @@ var App;
                         }
                     });
                 }
-                TeamController.$inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService'];
                 return TeamController;
-            })();
+            }());
+            TeamController.$inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService'];
             Team.TeamController = TeamController;
             angular.module('quinntenfuller').controller('TeamController', TeamController);
         })(Team = Pages.Team || (Pages.Team = {}));

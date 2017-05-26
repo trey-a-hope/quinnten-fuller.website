@@ -5,6 +5,7 @@ declare module App.Services {
         private databaseRef;
         clienteleDatabaseRef: Firebase;
         teamDatabaseRef: Firebase;
+        blogDatabaseRef: Firebase;
         storageRef: any;
         constructor();
     }

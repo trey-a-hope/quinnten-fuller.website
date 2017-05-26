@@ -14,10 +14,11 @@ var App;
                 this.databaseRef = this.firebase.database().ref();
                 this.clienteleDatabaseRef = this.databaseRef.child('Clientele');
                 this.teamDatabaseRef = this.databaseRef.child('Team');
+                this.blogDatabaseRef = this.databaseRef.child('Blogs');
                 this.storageRef = this.firebase.storage().ref();
             }
             return MyFirebaseRef;
-        })();
+        }());
         Services.MyFirebaseRef = MyFirebaseRef;
         angular.module('quinntenfuller').service('MyFirebaseRef', MyFirebaseRef);
     })(Services = App.Services || (App.Services = {}));

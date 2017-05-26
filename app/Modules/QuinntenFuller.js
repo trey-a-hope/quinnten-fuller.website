@@ -32,6 +32,6 @@ var QuinntenFuller = (function () {
         });
     }
     return QuinntenFuller;
-})();
+}());
 new QuinntenFuller();
 //# sourceMappingURL=QuinntenFuller.js.map

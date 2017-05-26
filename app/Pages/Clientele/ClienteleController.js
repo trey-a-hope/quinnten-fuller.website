@@ -62,9 +62,9 @@ var App;
                         }
                     });
                 }
-                ClienteleController.$inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService'];
                 return ClienteleController;
-            })();
+            }());
+            ClienteleController.$inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService'];
             Clientele_1.ClienteleController = ClienteleController;
             angular.module('quinntenfuller').controller('ClienteleController', ClienteleController);
         })(Clientele = Pages.Clientele || (Pages.Clientele = {}));

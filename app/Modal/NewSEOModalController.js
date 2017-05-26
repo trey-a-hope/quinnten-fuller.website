@@ -41,9 +41,9 @@ var App;
                     _this.$modalInstance.dismiss();
                 };
             }
-            NewSEOModalController.$inject = ['$modalInstance', '$q', '$http', 'ModalService', 'EmailService'];
             return NewSEOModalController;
-        })();
+        }());
+        NewSEOModalController.$inject = ['$modalInstance', '$q', '$http', 'ModalService', 'EmailService'];
         Modal.NewSEOModalController = NewSEOModalController;
         angular.module('quinntenfuller').controller('NewSEOModalController', NewSEOModalController);
     })(Modal = App.Modal || (App.Modal = {}));

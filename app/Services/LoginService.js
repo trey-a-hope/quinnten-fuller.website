@@ -18,9 +18,9 @@ var App;
                 };
                 this.loggedIn ? this.modalService.displayToast('Dont Forget', 'Turn login service off after testing.', 'success') : 'f';
             }
-            LoginService.$inject = ['ModalService'];
             return LoginService;
-        })();
+        }());
+        LoginService.$inject = ['ModalService'];
         Services.LoginService = LoginService;
         angular.module('quinntenfuller').service('LoginService', LoginService);
     })(Services = App.Services || (App.Services = {}));

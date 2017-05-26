@@ -19,9 +19,9 @@ var App;
                     });
                 };
             }
-            EmailService.$inject = ['$http'];
             return EmailService;
-        })();
+        }());
+        EmailService.$inject = ['$http'];
         Services.EmailService = EmailService;
         angular.module('quinntenfuller').service('EmailService', EmailService);
     })(Services = App.Services || (App.Services = {}));

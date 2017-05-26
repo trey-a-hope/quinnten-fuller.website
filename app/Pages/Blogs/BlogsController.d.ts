@@ -13,6 +13,10 @@ declare module App.Pages.Blogs {
         blogs: Array<Blog>;
         static $inject: string[];
         constructor($modal: ng.ui.bootstrap.IModalService, $http: ng.IHttpService, myFirebaseRef: MyFirebaseRef, loginService: LoginService, $scope: any, modalService: ModalService);
-        openBlog: (blog: Blog) => void;
+        getBlogs: () => void;
+        openBlog: (blog: Blog, index: number) => void;
+        addBlog: () => void;
+        editBlog: (blog: Blog) => void;
+        deleteBlog: (blog: Blog) => void;
     }
 }

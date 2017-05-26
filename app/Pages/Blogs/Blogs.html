@@ -13,21 +13,42 @@
             <div ng-repeat="blog in vm.blogs">
                 <div class="card col-xs-12 col-md-4">
                     <div class="view overlay hm-white-slight">
-                        <img ng-src="{{ blog.coverImageUrl }}" class="img-fluid" alt="">
+                        <img ng-src="{{ blog.coverImageUrl }}" class="img-fluid" alt=""></img>
                     </div>
                     <div class="card-block">
                         <h4 class="card-title">{{ blog.title }}</h4>
                         <p class="card-text">
-                            {{ blog.subTitle }}
+                            {{ blog.subtitle }}
                         </p>
                         <p>
                             <i class="fa fa-clock-o"></i>
                             {{ blog.postDateTime | date:'MMMM dd, yyyy' }}
                         </p>
-                        <a class="btn btn-primary" ng-click="vm.openBlog(blog)">Open</a>
+                        <!-- Open -->
+                        <span class="fa-stack fa-1x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i ng-click="vm.openBlog(blog, $index)" class="fa fa-eye fa-stack-1x fa-inverse cursor-pointer"></i>
+                        </span>   
+                        <!-- Edit -->
+                        <span class="fa-stack fa-1x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i ng-click="vm.editBlog(blog)" class="fa fa-pencil fa-stack-1x fa-inverse cursor-pointer"></i>
+                        </span>   
+                        <!-- Delete -->
+                        <span class="fa-stack fa-1x">
+                            <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                            <i ng-click="vm.deleteBlog(blog)" class="fa fa-trash fa-stack-1x fa-inverse cursor-pointer"></i>
+                        </span>                    
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row text-center">
+            <button 
+                class="btn btn-primary" 
+                ng-click="vm.addBlog()">
+                    Add Blog
+            </button>
         </div>
     </div>
 </section>

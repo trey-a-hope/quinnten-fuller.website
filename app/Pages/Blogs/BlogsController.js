@@ -4,7 +4,6 @@ var App;
     (function (Pages) {
         var Blogs;
         (function (Blogs) {
-            var Blog = App.Models.Blog;
             var BlogsController = (function () {
                 function BlogsController($modal, $http, myFirebaseRef, loginService, $scope, modalService) {
                     var _this = this;
@@ -15,8 +14,16 @@ var App;
                     this.$scope = $scope;
                     this.modalService = modalService;
                     this.blogs = new Array();
-                    this.openBlog = function (blog) {
-                        var index = _this.blogs.indexOf(blog);
+                    this.getBlogs = function () {
+                        _this.blogs = [];
+                        _this.myFirebaseRef.blogDatabaseRef.on('child_added', function (snapshot) {
+                            _this.blogs.push(snapshot.val());
+                            if (!_this.$scope.$$phase) {
+                                _this.$scope.$apply();
+                            }
+                        });
+                    };
+                    this.openBlog = function (blog, index) {
                         _this.$modal.open({
                             templateUrl: 'app/Pages/Blogs/ViewBlogModalTemplate.html',
                             controller: 'ViewBlogModalController as vm',
@@ -32,25 +39,55 @@ var App;
                             }
                         });
                     };
-                    var b = new Blog();
-                    b.title = "Trey Is Cooking";
-                    b.subTitle = "When you think he couldn't get any better, he does!";
-                    b.postDateTime = "2017-03-21T07:29:58";
-                    b.html = "<h1>It takes a village...?</h1>";
-                    b.coverImageUrl = "https://firebasestorage.googleapis.com/v0/b/firebase-camp-central.appspot.com/o/Images%2FCamps%2F-KDuUd4rxKA-rZF79uii?alt=media&token=f9daab05-2856-4aa4-ad1a-044cfb5b980e";
-                    var a = new Blog();
-                    a.title = "Google Is Finally Here";
-                    a.subTitle = "How many fountain drinks do you want.";
-                    a.postDateTime = "2017-05-24T07:29:58";
-                    a.html = "<div class='row'><div class='col-xs-12'><h5>New Beginnings</h5><p>Sed nec nisi pellentesque, auctor urna eget, blandit massa. Aliquam consequat ex in convallis maximus. Donec eget urna vel erat vestibulum finibus in a nibh. Mauris ultrices quam lectus, non iaculis neque malesuada sed. Donec efficitur libero elit, et vestibulum mi congue eu. Praesent vitae porttitor ante, eget pellentesque erat. Maecenas erat est, ultricies at ultrices at, sodales vel lacus. Duis eu risus pulvinar, vehicula sapien sed, feugiat est.</p>" +
-                        "<img class='col-xs-4' src='https://firebasestorage.googleapis.com/v0/b/intercom-78436.appspot.com/o/TeamPage%2FProfilePic?alt=media&token=4e8fd21f-d498-4b1e-a0f9-969711b19de4'></img></div></div>";
-                    a.coverImageUrl = "https://firebasestorage.googleapis.com/v0/b/intercom-78436.appspot.com/o/TeamPage%2FProfilePic?alt=media&token=4e8fd21f-d498-4b1e-a0f9-969711b19de4";
-                    this.blogs.push(b);
-                    this.blogs.push(a);
+                    this.addBlog = function () {
+                        _this.$modal.open({
+                            templateUrl: 'app/Pages/Blogs/AddEditBlogModalTemplate.html',
+                            controller: 'AddEditBlogModalController as vm',
+                            size: 'lg',
+                            backdrop: 'static',
+                            resolve: {
+                                isEdit: function () {
+                                    return false;
+                                },
+                                blog: function () {
+                                    return null;
+                                }
+                            }
+                        }).result.then(function () {
+                            _this.modalService.displayToast('Blog Added', '', 'success');
+                            _this.getBlogs();
+                        });
+                    };
+                    this.editBlog = function (blog) {
+                        _this.$modal.open({
+                            templateUrl: 'app/Pages/Blogs/AddEditBlogModalTemplate.html',
+                            controller: 'AddEditBlogModalController as vm',
+                            size: 'lg',
+                            backdrop: 'static',
+                            resolve: {
+                                isEdit: function () {
+                                    return true;
+                                },
+                                blog: function () {
+                                    return blog;
+                                }
+                            }
+                        });
+                    };
+                    this.deleteBlog = function (blog) {
+                        _this.modalService.displayConfirmation('Hit yes to confirm.', 'Delete Blog?', 'Yes')
+                            .then(function () {
+                            _this.myFirebaseRef.blogDatabaseRef.child(blog.id).remove();
+                            _this.modalService.displayToast('Blog Deleted', '', 'success');
+                            _this.getBlogs();
+                        })
+                            .catch(function () { });
+                    };
+                    this.getBlogs();
                 }
-                BlogsController.$inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService'];
                 return BlogsController;
-            })();
+            }());
+            BlogsController.$inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService'];
             Blogs.BlogsController = BlogsController;
             angular.module('quinntenfuller').controller('BlogsController', BlogsController);
         })(Blogs = Pages.Blogs || (Pages.Blogs = {}));
