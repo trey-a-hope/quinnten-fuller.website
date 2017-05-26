@@ -23,7 +23,7 @@ var App;
                             }
                         });
                     };
-                    this.openBlog = function (blog, index) {
+                    this.viewBlog = function (blog, index) {
                         _this.$modal.open({
                             templateUrl: 'app/Pages/Blogs/ViewBlogModalTemplate.html',
                             controller: 'ViewBlogModalController as vm',
@@ -69,17 +69,24 @@ var App;
                                     return true;
                                 },
                                 blog: function () {
-                                    return blog;
+                                    return angular.copy(blog);
                                 }
                             }
+                        }).result.then(function () {
+                            _this.modalService.displayToast('Blog Updated', '', 'success');
+                            _this.getBlogs();
                         });
                     };
                     this.deleteBlog = function (blog) {
                         _this.modalService.displayConfirmation('Hit yes to confirm.', 'Delete Blog?', 'Yes')
                             .then(function () {
                             _this.myFirebaseRef.blogDatabaseRef.child(blog.id).remove();
-                            _this.modalService.displayToast('Blog Deleted', '', 'success');
-                            _this.getBlogs();
+                            _this.myFirebaseRef.storageRef.child('BlogPage/' + blog.id).delete()
+                                .then(function (result) {
+                                _this.modalService.displayToast('Blog Deleted', '', 'success');
+                                _this.getBlogs();
+                            })
+                                .catch(function (error) { });
                         })
                             .catch(function () { });
                     };

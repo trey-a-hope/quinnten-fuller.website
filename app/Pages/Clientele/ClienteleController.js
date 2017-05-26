@@ -47,7 +47,7 @@ var App;
                         });
                     };
                     this.deleteClientele = function (clientele) {
-                        _this.modalService.displayConfirmation("Are you sure you want to delete this clientele?", "Delete", "Yes")
+                        _this.modalService.displayConfirmation("Hit yes to confirm.", "Delete Clientele", "Yes")
                             .then(function (result) {
                             _this.myFirebaseRef.clienteleDatabaseRef.child(clientele.id).remove();
                             _this.modalService.displayToast('Success', 'Clientele deleted.', 'success');

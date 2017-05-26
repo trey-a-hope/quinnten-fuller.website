@@ -29,7 +29,7 @@ module App.Pages.Blogs {
             });
         }
 
-        openBlog = (blog: Blog, index: number): void => {
+        viewBlog = (blog: Blog, index: number): void => {
             this.$modal.open({
                templateUrl: 'app/Pages/Blogs/ViewBlogModalTemplate.html',
                controller: 'ViewBlogModalController as vm',
@@ -77,9 +77,12 @@ module App.Pages.Blogs {
                     return true;
                 },
                 blog: (): Blog => {
-                        return blog;
+                        return angular.copy(blog);
                     }
                 }
+            }).result.then(() =>{
+                this.modalService.displayToast('Blog Updated', '', 'success');
+                this.getBlogs();
             });
         }
 
@@ -87,8 +90,12 @@ module App.Pages.Blogs {
             this.modalService.displayConfirmation('Hit yes to confirm.', 'Delete Blog?', 'Yes')
                 .then(() =>{
                     this.myFirebaseRef.blogDatabaseRef.child(blog.id).remove();
-                    this.modalService.displayToast('Blog Deleted', '', 'success');
-                    this.getBlogs();
+                    this.myFirebaseRef.storageRef.child('BlogPage/' + blog.id).delete()
+                        .then((result: any) => {
+                            this.modalService.displayToast('Blog Deleted', '', 'success');
+                            this.getBlogs();
+                        })
+                        .catch((error: any) => {})
                 })
                 .catch(() =>{});
         }

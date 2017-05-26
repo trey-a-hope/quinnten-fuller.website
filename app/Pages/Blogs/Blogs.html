@@ -12,7 +12,7 @@
         <div class="row text-center">
             <div ng-repeat="blog in vm.blogs">
                 <div class="card col-xs-12 col-md-4">
-                    <div class="view overlay hm-white-slight">
+                    <div class="view overlay hm-white-slight" align="center">
                         <img ng-src="{{ blog.coverImageUrl }}" class="img-fluid" alt=""></img>
                     </div>
                     <div class="card-block">
@@ -27,7 +27,7 @@
                         <!-- Open -->
                         <span class="fa-stack fa-1x">
                             <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                            <i ng-click="vm.openBlog(blog, $index)" class="fa fa-eye fa-stack-1x fa-inverse cursor-pointer"></i>
+                            <i ng-click="vm.viewBlog(blog, $index)" class="fa fa-eye fa-stack-1x fa-inverse cursor-pointer"></i>
                         </span>   
                         <!-- Edit -->
                         <span class="fa-stack fa-1x">

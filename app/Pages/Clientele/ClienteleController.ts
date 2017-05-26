@@ -58,7 +58,7 @@ module App.Pages.Clientele {
         }
 
         deleteClientele = (clientele: Clientele): void => {
-            this.modalService.displayConfirmation("Are you sure you want to delete this clientele?", "Delete", "Yes")
+            this.modalService.displayConfirmation("Hit yes to confirm.", "Delete Clientele", "Yes")
                 .then((result: any) => {
                     this.myFirebaseRef.clienteleDatabaseRef.child(clientele.id).remove();
                     this.modalService.displayToast('Success', 'Clientele deleted.', 'success');

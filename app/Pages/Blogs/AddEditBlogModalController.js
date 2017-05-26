@@ -15,14 +15,57 @@ var App;
                     _this.$modalInstance.dismiss(false);
                 };
                 this.save = function (form) {
-                    var newPostKey = _this.myFirebaseRef.blogDatabaseRef.push().key.toString();
-                    _this.blog.id = newPostKey;
-                    _this.blog.postDateTime = new Date().toDateString();
-                    _this.myFirebaseRef.blogDatabaseRef.child(newPostKey).update(_this.blog);
-                    _this.$modalInstance.close(true);
+                    _this.attemptedSend = true;
+                    if (form.$valid) {
+                        var fileChooser = document.getElementById('file-chooser-blog');
+                        var file = fileChooser.files[0];
+                        if (file) {
+                            var newPostKey = _this.myFirebaseRef.blogDatabaseRef.push().key.toString();
+                            _this.blog.id = newPostKey;
+                            var uploadTask = _this.myFirebaseRef.storageRef.child("BlogPage/" + _this.blog.id).put(file);
+                            uploadTask.on('state_changed', function (snapshot) {
+                            }, function (error) {
+                                _this.modalService.displayToast('Error', error, 'danger');
+                            }, function (success) {
+                                _this.blog.postDateTime = new Date().toDateString();
+                                _this.blog.coverImageUrl = uploadTask.snapshot.downloadURL;
+                                _this.myFirebaseRef.blogDatabaseRef.child(_this.blog.id).update(_this.blog);
+                                _this.$modalInstance.close(true);
+                            });
+                        }
+                        else {
+                            _this.modalService.displayToast('Error', 'Must select a cover image for blog.', 'danger');
+                            ;
+                        }
+                    }
+                    else {
+                        _this.modalService.displayToast('Error', 'There were errors in your submission.', 'danger');
+                    }
                 };
-                this.update = function () {
-                    _this.$modalInstance.close(true);
+                this.update = function (form) {
+                    _this.attemptedSend = true;
+                    if (form.$valid) {
+                        var fileChooser = document.getElementById('file-chooser-blog');
+                        var file = fileChooser.files[0];
+                        if (file) {
+                            var uploadTask = _this.myFirebaseRef.storageRef.child("BlogPage/" + _this.blog.id).put(file);
+                            uploadTask.on('state_changed', function (snapshot) {
+                            }, function (error) {
+                                _this.modalService.displayToast('Error', error, 'danger');
+                            }, function (success) {
+                                _this.blog.coverImageUrl = uploadTask.snapshot.downloadURL;
+                                _this.myFirebaseRef.blogDatabaseRef.child(_this.blog.id).update(_this.blog);
+                                _this.$modalInstance.close(true);
+                            });
+                        }
+                        else {
+                            _this.myFirebaseRef.blogDatabaseRef.child(_this.blog.id).update(_this.blog);
+                            _this.$modalInstance.close(true);
+                        }
+                    }
+                    else {
+                        _this.modalService.displayToast('Error', 'There were errors in your submission.', 'danger');
+                    }
                 };
             }
             return AddEditBlogModalController;

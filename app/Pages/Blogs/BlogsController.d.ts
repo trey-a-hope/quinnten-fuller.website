@@ -14,7 +14,7 @@ declare module App.Pages.Blogs {
         static $inject: string[];
         constructor($modal: ng.ui.bootstrap.IModalService, $http: ng.IHttpService, myFirebaseRef: MyFirebaseRef, loginService: LoginService, $scope: any, modalService: ModalService);
         getBlogs: () => void;
-        openBlog: (blog: Blog, index: number) => void;
+        viewBlog: (blog: Blog, index: number) => void;
         addBlog: () => void;
         editBlog: (blog: Blog) => void;
         deleteBlog: (blog: Blog) => void;
