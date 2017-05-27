@@ -14,6 +14,7 @@ class QuinntenFuller{
         firebase.initializeApp(config);
         /* Moduel Setup */
         angular.module('quinntenfuller', [
+            'ui.router',
             'ui.bootstrap',
             'ngSanitize',
             'ngAnimate',

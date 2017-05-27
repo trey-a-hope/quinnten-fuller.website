@@ -11,5 +11,6 @@ declare module App.Pages.ReachMore {
         modalService: ModalService;
         static $inject: string[];
         constructor($modal: ng.ui.bootstrap.IModalService, $http: ng.IHttpService, myFirebaseRef: MyFirebaseRef, loginService: LoginService, $scope: any, modalService: ModalService);
+        scroll: (href: string) => void;
     }
 }

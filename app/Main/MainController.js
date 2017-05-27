@@ -3,7 +3,7 @@ var App;
     var Contact;
     (function (Contact) {
         var MainController = (function () {
-            function MainController($modal, $scope, $http, modalService, $timeout, loginService) {
+            function MainController($modal, $scope, $http, modalService, $timeout, loginService, $state) {
                 var _this = this;
                 this.$modal = $modal;
                 this.$scope = $scope;
@@ -11,8 +11,12 @@ var App;
                 this.modalService = modalService;
                 this.$timeout = $timeout;
                 this.loginService = loginService;
+                this.$state = $state;
                 this.clickCount = 0;
                 this.timeInMs = 0;
+                this.home = function () {
+                    _this.$state.go('main');
+                };
                 this.incrementClickCount = function () {
                     if (_this.clickCount == 0) {
                         _this.$timeout(_this.countUp, 1000);
@@ -34,16 +38,16 @@ var App;
                         _this.$timeout(_this.countUp, 1000);
                     }
                 };
-                this.scroll = function (href) {
-                    $('html, body').stop().animate({
-                        scrollTop: ($(href).offset().top - 80)
-                    }, 1250, 'easeInOutExpo');
-                    event.preventDefault();
-                };
+                this.isOnBlogPage = $state.includes('fullblog');
+                this.$scope.$watch(function () {
+                    return _this.$state.$current.name;
+                }, function (newVal, oldVal) {
+                    _this.isOnBlogPage = $state.includes('fullblog');
+                });
             }
             return MainController;
         }());
-        MainController.$inject = ['$modal', '$scope', '$http', 'ModalService', '$timeout', 'LoginService'];
+        MainController.$inject = ['$modal', '$scope', '$http', 'ModalService', '$timeout', 'LoginService', '$state'];
         Contact.MainController = MainController;
         angular.module('quinntenfuller').controller('MainController', MainController);
     })(Contact = App.Contact || (App.Contact = {}));

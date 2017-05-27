@@ -5,10 +5,23 @@ module App.Contact {
     export class MainController {
         clickCount: number = 0;
         timeInMs = 0;
+        isOnBlogPage: boolean;
 
-        static $inject = ['$modal', '$scope', '$http', 'ModalService', '$timeout', 'LoginService'];
+        static $inject = ['$modal', '$scope', '$http', 'ModalService', '$timeout', 'LoginService', '$state'];
         constructor(public $modal: ng.ui.bootstrap.IModalService, public $scope: ng.IScope, public $http: ng.IHttpService, 
-        public modalService: ModalService, public $timeout: ng.ITimeoutService, public loginService: LoginService){
+            public modalService: ModalService, public $timeout: ng.ITimeoutService, public loginService: LoginService,
+            public $state: any){
+            this.isOnBlogPage = $state.includes('fullblog');
+
+            this.$scope.$watch(() => {
+                return this.$state.$current.name;
+            }, (newVal: any, oldVal: any) => {
+                this.isOnBlogPage = $state.includes('fullblog');
+            });
+        }
+
+        home = (): void => {
+            this.$state.go('main');
         }
 
         incrementClickCount = (): void => {
@@ -31,14 +44,7 @@ module App.Contact {
                 this.timeInMs += 1000;
                 this.$timeout(this.countUp, 1000);
             }
-        }
-
-        scroll = (href: string): void => {
-            $('html, body').stop().animate({
-                scrollTop: ($(href).offset().top - 80)
-            }, 1250, 'easeInOutExpo');
-            event.preventDefault();
-        }        
+        }      
     }
 
     angular.module('quinntenfuller').controller('MainController', MainController);

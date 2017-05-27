@@ -8,14 +8,15 @@ module App.Pages.Blogs {
 
         blogs: Array<Blog> = new Array<Blog>();
 
-        static $inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService'];
+        static $inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService', '$state'];
         constructor(public $modal: ng.ui.bootstrap.IModalService, 
             public $http: ng.IHttpService, 
             public myFirebaseRef: MyFirebaseRef, 
             public loginService: LoginService,
             public $scope: any,
-            public modalService: ModalService){
-                this.getBlogs()
+            public modalService: ModalService,
+            public $state: ng.ui.IStateService){
+                this.getBlogs();
         }
 
         getBlogs = (): void => {
@@ -30,20 +31,9 @@ module App.Pages.Blogs {
         }
 
         viewBlog = (blog: Blog, index: number): void => {
-            this.$modal.open({
-               templateUrl: 'app/Pages/Blogs/ViewBlogModalTemplate.html',
-               controller: 'ViewBlogModalController as vm',
-               size: 'lg',
-               backdrop: 'static',
-               resolve: {
-                    index: () => {
-                        return index;
-                    },
-                    blogs: () => {
-                        return this.blogs;
-                    }
-               }
-           });
+            this.$state.go('fullblog', {
+                blog: blog
+            });
         }
 
         addBlog = (): void => {

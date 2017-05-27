@@ -12,6 +12,11 @@ var App;
                     this.loginService = loginService;
                     this.$scope = $scope;
                     this.modalService = modalService;
+                    this.scroll = function (href) {
+                        $('html, body').stop().animate({
+                            scrollTop: ($(href).offset().top - 80)
+                        }, 1250, 'easeInOutExpo');
+                    };
                 }
                 return ReachMoreController;
             }());

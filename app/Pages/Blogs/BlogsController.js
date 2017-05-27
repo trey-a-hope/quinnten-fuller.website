@@ -5,7 +5,7 @@ var App;
         var Blogs;
         (function (Blogs) {
             var BlogsController = (function () {
-                function BlogsController($modal, $http, myFirebaseRef, loginService, $scope, modalService) {
+                function BlogsController($modal, $http, myFirebaseRef, loginService, $scope, modalService, $state) {
                     var _this = this;
                     this.$modal = $modal;
                     this.$http = $http;
@@ -13,6 +13,7 @@ var App;
                     this.loginService = loginService;
                     this.$scope = $scope;
                     this.modalService = modalService;
+                    this.$state = $state;
                     this.blogs = new Array();
                     this.getBlogs = function () {
                         _this.blogs = [];
@@ -24,19 +25,8 @@ var App;
                         });
                     };
                     this.viewBlog = function (blog, index) {
-                        _this.$modal.open({
-                            templateUrl: 'app/Pages/Blogs/ViewBlogModalTemplate.html',
-                            controller: 'ViewBlogModalController as vm',
-                            size: 'lg',
-                            backdrop: 'static',
-                            resolve: {
-                                index: function () {
-                                    return index;
-                                },
-                                blogs: function () {
-                                    return _this.blogs;
-                                }
-                            }
+                        _this.$state.go('fullblog', {
+                            blog: blog
                         });
                     };
                     this.addBlog = function () {
@@ -94,7 +84,7 @@ var App;
                 }
                 return BlogsController;
             }());
-            BlogsController.$inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService'];
+            BlogsController.$inject = ['$modal', '$http', 'MyFirebaseRef', 'LoginService', '$scope', 'ModalService', '$state'];
             Blogs.BlogsController = BlogsController;
             angular.module('quinntenfuller').controller('BlogsController', BlogsController);
         })(Blogs = Pages.Blogs || (Pages.Blogs = {}));

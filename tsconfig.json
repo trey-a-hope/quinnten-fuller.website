@@ -10,8 +10,8 @@
     "files": [
         "app/Pages/About/AboutController.ts",
         "app/Pages/Blogs/AddEditBlogModalController.ts",
+        "app/Pages/Blogs/FullBlogController.ts",
         "app/Pages/Blogs/BlogsController.ts",
-        "app/Pages/Blogs/ViewBlogModalController.ts",
         "app/Pages/Clientele/ClienteleController.ts",
         "app/Pages/Contact/ContactController.ts",
         "app/Pages/ReachMore/ReachMoreController.ts",
@@ -21,6 +21,7 @@
         "app/Modules/QuinntenFuller.ts",
         "app/Models/Blog.ts",
         "app/Models/Clientele.ts",
+        "app/Routing/Routing.ts",
         "app/Services/EmailService.ts",
         "app/Services/LoginService.ts",
         "app/Services/ModalService.ts",

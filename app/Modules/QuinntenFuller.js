@@ -10,6 +10,7 @@ var QuinntenFuller = (function () {
         });
         firebase.initializeApp(config);
         angular.module('quinntenfuller', [
+            'ui.router',
             'ui.bootstrap',
             'ngSanitize',
             'ngAnimate',

@@ -15,6 +15,13 @@ module App.Pages.ReachMore {
             public modalService: ModalService){
         }
 
+        scroll = (href: string): void => {
+            $('html, body').stop().animate({
+                scrollTop: ($(href).offset().top - 80)
+            }, 1250, 'easeInOutExpo');
+            //event.preventDefault();
+        }  
+
     }
 
     angular.module('quinntenfuller').controller('ReachMoreController', ReachMoreController);

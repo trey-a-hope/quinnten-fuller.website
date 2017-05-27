@@ -8,12 +8,14 @@ declare module App.Contact {
         modalService: ModalService;
         $timeout: ng.ITimeoutService;
         loginService: LoginService;
+        $state: any;
         clickCount: number;
         timeInMs: number;
+        isOnBlogPage: boolean;
         static $inject: string[];
-        constructor($modal: ng.ui.bootstrap.IModalService, $scope: ng.IScope, $http: ng.IHttpService, modalService: ModalService, $timeout: ng.ITimeoutService, loginService: LoginService);
+        constructor($modal: ng.ui.bootstrap.IModalService, $scope: ng.IScope, $http: ng.IHttpService, modalService: ModalService, $timeout: ng.ITimeoutService, loginService: LoginService, $state: any);
+        home: () => void;
         incrementClickCount: () => void;
         countUp: () => void;
-        scroll: (href: string) => void;
     }
 }
