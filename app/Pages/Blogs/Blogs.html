@@ -12,36 +12,35 @@
         <br>
         <div class="row text-center">
             <div ng-repeat="blog in vm.blogs">
-                <div class="card col-xs-12 col-md-4">
-                    <div class="view overlay hm-white-slight" align="center">
-                        <img ng-src="{{ blog.coverImageUrl }}" class="img-fluid" alt=""></img>
-                    </div>
-                    <div class="card-block">
-                        <h4 class="card-title">{{ blog.title }}</h4>
-                        <p class="card-text">
-                            {{ blog.subtitle }}
-                        </p>
-                        <p>
-                            <i class="fa fa-clock-o"></i>
-                            {{ blog.postDateTime | date:'MMMM dd, yyyy' }}
-                        </p>
-                        <!-- Open -->
-                        <span class="fa-stack fa-1x">
-                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                            <i ng-click="vm.viewBlog(blog, $index)" class="fa fa-eye fa-stack-1x fa-inverse cursor-pointer"></i>
-                        </span>   
-                        <!-- Edit -->
-                        <span class="fa-stack fa-1x"
-                            ng-show="vm.loginService.isLoggedIn()">
-                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                            <i ng-click="vm.editBlog(blog)" class="fa fa-pencil fa-stack-1x fa-inverse cursor-pointer"></i>
-                        </span>   
-                        <!-- Delete -->
-                        <span class="fa-stack fa-1x"
-                            ng-show="vm.loginService.isLoggedIn()">
-                            <i class="fa fa-circle fa-stack-2x text-danger"></i>
-                            <i ng-click="vm.deleteBlog(blog)" class="fa fa-trash fa-stack-1x fa-inverse cursor-pointer"></i>
-                        </span>                    
+                <div class="card col-xs-12 col-md-4" style="padding: 10px; box-shadow: none">
+                    <div style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12)">
+                        <div class="view overlay hm-white-slight" align="center">
+                            <img ng-src="{{ blog.coverImageUrl }}" class="img-fluid" alt=""></img>
+                        </div>
+                        <div class="card-block">
+                            <h4 class="card-title">{{ blog.title }}</h4>
+                            <p class="card-text">
+                                {{ blog.subtitle }}
+                            </p>
+                            <p>
+                                <i class="fa fa-clock-o"></i>
+                                {{ blog.postDateTime | date:'MMMM dd, yyyy' }}
+                            </p>
+                            <!-- Open -->
+                            <button class="btn btn-primary" ng-click="vm.viewBlog(blog, $index)"><i class="fa fa-eye"></i>&nbsp;Open</button>
+                            <!-- Edit -->
+                            <span class="fa-stack fa-1x"
+                                ng-show="vm.loginService.isLoggedIn()">
+                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                <i ng-click="vm.editBlog(blog)" class="fa fa-pencil fa-stack-1x fa-inverse cursor-pointer"></i>
+                            </span>   
+                            <!-- Delete -->
+                            <span class="fa-stack fa-1x"
+                                ng-show="vm.loginService.isLoggedIn()">
+                                <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                                <i ng-click="vm.deleteBlog(blog)" class="fa fa-trash fa-stack-1x fa-inverse cursor-pointer"></i>
+                            </span>                    
+                        </div>
                     </div>
                 </div>
             </div>

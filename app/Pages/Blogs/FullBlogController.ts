@@ -43,9 +43,7 @@ module App.Pages.Blogs {
 
         share = (provider: string): void => {
             var url: string = this.$location.absUrl();
-            //var url = "http://google.com";
-            var text: string = 'Check out this blog I found on Intercom.com; \"' + this.blog.title + '\"';
-            console.log(url);
+            var text: string = 'Check out this blog I found on Intercom Marketing; \"' + this.blog.title + '\"';
             switch(provider){
                 case 'TWITTER':
                     window.open('http://twitter.com/share?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');

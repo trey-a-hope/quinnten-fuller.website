@@ -145,7 +145,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top" ng-click="vm.incrementClickCount()">Intercom Marketing {{ vm.isOnBlogPage ? '- Blog' : '' }}</a>
+                <a class="navbar-brand page-scroll" href="#page-top" ng-click="vm.incrementClickCount()" ng-style="vm.isOnBlogPage && {'cursor':'default'}">Intercom Marketing {{ vm.isOnBlogPage ? '- Blog' : '' }}</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

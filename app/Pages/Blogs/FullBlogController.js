@@ -21,8 +21,7 @@ var App;
                     };
                     this.share = function (provider) {
                         var url = _this.$location.absUrl();
-                        var text = 'Check out this blog I found on Intercom.com; \"' + _this.blog.title + '\"';
-                        console.log(url);
+                        var text = 'Check out this blog I found on Intercom Marketing; \"' + _this.blog.title + '\"';
                         switch (provider) {
                             case 'TWITTER':
                                 window.open('http://twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
