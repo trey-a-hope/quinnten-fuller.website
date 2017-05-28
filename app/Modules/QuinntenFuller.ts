@@ -1,4 +1,5 @@
 declare var firebase: any;
+declare var FB: any;
 
 class QuinntenFuller{
     constructor(){

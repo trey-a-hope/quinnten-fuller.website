@@ -1,3 +1,4 @@
+
 module App.Pages.Blogs {
     import Blog = App.Models.Blog;
     import LoginService = App.Services.LoginService;
@@ -32,6 +33,8 @@ module App.Pages.Blogs {
                     this.blog = this.$state.params.blog;
                     $location.search('id', this.blog.id);
                 }
+                /* Scroll to the top of the page. */
+                window.scrollTo(0, 0);
         }
 
         back = (): void => {
@@ -40,16 +43,18 @@ module App.Pages.Blogs {
 
         share = (provider: string): void => {
             var url: string = this.$location.absUrl();
+            //var url = "http://google.com";
+            var text: string = 'Check out this blog I found on Intercom.com; \"' + this.blog.title + '\"';
             console.log(url);
             switch(provider){
                 case 'TWITTER':
-                    alert('Share link \'' + url + '\' to Twitter');
+                    window.open('http://twitter.com/share?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
                     break;
                 case 'FACEBOOK':
-                    alert('Share link \'' + url + '\' to Twitter');
+                    window.open('http://facebook.com/sharer/sharer.php?u='+encodeURIComponent(url)+'&title='+encodeURIComponent(this.blog.title)+'&description='+encodeURIComponent('Check out this blog I found on Intercom.com'), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
                     break;
                 case 'LINKEDIN':
-                    alert('Share link \'' + url + '\' to Twitter');
+                    window.open('http://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(url)+'&text='+encodeURIComponent(text), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
                     break;
                 default:
                     break;

@@ -21,16 +21,17 @@ var App;
                     };
                     this.share = function (provider) {
                         var url = _this.$location.absUrl();
+                        var text = 'Check out this blog I found on Intercom.com; \"' + _this.blog.title + '\"';
                         console.log(url);
                         switch (provider) {
                             case 'TWITTER':
-                                alert('Share link \'' + url + '\' to Twitter');
+                                window.open('http://twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
                                 break;
                             case 'FACEBOOK':
-                                alert('Share link \'' + url + '\' to Twitter');
+                                window.open('http://facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url) + '&title=' + encodeURIComponent(_this.blog.title) + '&description=' + encodeURIComponent('Check out this blog I found on Intercom.com'), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
                                 break;
                             case 'LINKEDIN':
-                                alert('Share link \'' + url + '\' to Twitter');
+                                window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
                                 break;
                             default:
                                 break;
@@ -49,6 +50,7 @@ var App;
                         this.blog = this.$state.params.blog;
                         $location.search('id', this.blog.id);
                     }
+                    window.scrollTo(0, 0);
                 }
                 return FullBlogController;
             }());
