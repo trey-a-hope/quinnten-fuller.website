@@ -40,7 +40,7 @@ var App;
                 };
                 this.scroll = function (href) {
                     $('html, body').stop().animate({
-                        scrollTop: ($(href).offset().top - 80)
+                        scrollTop: ($(href).offset().top - 50)
                     }, 1250, 'easeInOutExpo');
                 };
                 this.isOnBlogPage = $state.includes('fullblog');

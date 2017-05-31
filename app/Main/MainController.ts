@@ -46,9 +46,10 @@ module App.Contact {
             }
         }      
 
+        /* NOTE : NOT BEING USED */
         scroll = (href: string): void => {
             $('html, body').stop().animate({
-                scrollTop: ($(href).offset().top - 80)
+                scrollTop: ($(href).offset().top - 50)
             }, 1250, 'easeInOutExpo');
             //event.preventDefault();
         }  
