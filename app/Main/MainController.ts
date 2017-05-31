@@ -45,6 +45,13 @@ module App.Contact {
                 this.$timeout(this.countUp, 1000);
             }
         }      
+
+        scroll = (href: string): void => {
+            $('html, body').stop().animate({
+                scrollTop: ($(href).offset().top - 80)
+            }, 1250, 'easeInOutExpo');
+            //event.preventDefault();
+        }  
     }
 
     angular.module('quinntenfuller').controller('MainController', MainController);

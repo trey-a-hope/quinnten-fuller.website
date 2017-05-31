@@ -15,19 +15,20 @@ module App.Modal {
         phoneNumberRegex: RegExp = /^\d{10}$/;
         emailRegex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-        static $inject = ['$modalInstance', '$q', '$http', 'ModalService', 'EmailService'];
+        static $inject = ['$modalInstance', '$q', '$http', 'ModalService', 'EmailService', 'Constants'];
         constructor(public $modalInstance: ng.ui.bootstrap.IModalServiceInstance, 
             public $q: ng.IQService,
             public $http: ng.IHttpService,
             public modalService: ModalService,
-            public emailService: EmailService) { 
+            public emailService: EmailService,
+            public constants: any) { 
         }
 
         acknowledge = (form: any): void => {
             this.attemptedSend = true;
             if(form.$valid){
                 this.emailService.sendEmail(
-                    'trey.a.hope@gmail.com',
+                    this.constants.COMPANY_EMAIL,
                     'You Have a New SEO - ' +this.name,
                     'Company: ' + this.company + '\n' +
                     'Email: ' + this.email + '\n' +  

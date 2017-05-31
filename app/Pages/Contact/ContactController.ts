@@ -14,20 +14,21 @@ module App.Pages.Contact {
         phoneNumberRegex: RegExp = /^\d{10}$/;
         emailRegex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-        static $inject = ['$modal', '$http', 'MyFirebaseRef', '$scope', 'ModalService', 'EmailService'];
+        static $inject = ['$modal', '$http', 'MyFirebaseRef', '$scope', 'ModalService', 'EmailService', 'Constants'];
         constructor(public $modal: ng.ui.bootstrap.IModalService, 
             public $http: ng.IHttpService, 
             public myFirebaseRef: MyFirebaseRef, 
             public $scope: any,
             public modalService: ModalService,
-            public emailService: EmailService){
+            public emailService: EmailService,
+            public constants: any){
         }
 
         sendEmail = (form: ng.IFormController): void =>{
             this.attemptedSend = true;
             if(form.$valid){
                 this.emailService.sendEmail(
-                    'trey.a.hope@gmail.com',
+                    this.constants.COMPANY_EMAIL,
                     'You Have a New Contact - ' +this.name,
                     'Company: ' + this.company + '\n' +
                     'Email: ' + this.email + '\n' +  

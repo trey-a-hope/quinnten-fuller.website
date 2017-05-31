@@ -38,6 +38,11 @@ var App;
                         _this.$timeout(_this.countUp, 1000);
                     }
                 };
+                this.scroll = function (href) {
+                    $('html, body').stop().animate({
+                        scrollTop: ($(href).offset().top - 80)
+                    }, 1250, 'easeInOutExpo');
+                };
                 this.isOnBlogPage = $state.includes('fullblog');
                 this.$scope.$watch(function () {
                     return _this.$state.$current.name;

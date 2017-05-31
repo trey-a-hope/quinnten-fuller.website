@@ -7,6 +7,7 @@ declare module App.Modal {
         $http: ng.IHttpService;
         modalService: ModalService;
         emailService: EmailService;
+        constants: any;
         name: string;
         company: string;
         email: string;
@@ -16,7 +17,7 @@ declare module App.Modal {
         phoneNumberRegex: RegExp;
         emailRegex: RegExp;
         static $inject: string[];
-        constructor($modalInstance: ng.ui.bootstrap.IModalServiceInstance, $q: ng.IQService, $http: ng.IHttpService, modalService: ModalService, emailService: EmailService);
+        constructor($modalInstance: ng.ui.bootstrap.IModalServiceInstance, $q: ng.IQService, $http: ng.IHttpService, modalService: ModalService, emailService: EmailService, constants: any);
         acknowledge: (form: any) => void;
         cancel: () => void;
     }

@@ -17,5 +17,6 @@ declare module App.Contact {
         home: () => void;
         incrementClickCount: () => void;
         countUp: () => void;
+        scroll: (href: string) => void;
     }
 }

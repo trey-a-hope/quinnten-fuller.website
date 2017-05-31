@@ -22,6 +22,7 @@
         "app/Models/Blog.ts",
         "app/Models/Clientele.ts",
         "app/Routing/Routing.ts",
+        "app/Services/Constants.ts",
         "app/Services/EmailService.ts",
         "app/Services/LoginService.ts",
         "app/Services/ModalService.ts",

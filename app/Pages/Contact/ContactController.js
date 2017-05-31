@@ -5,7 +5,7 @@ var App;
         var Contact;
         (function (Contact) {
             var ContactController = (function () {
-                function ContactController($modal, $http, myFirebaseRef, $scope, modalService, emailService) {
+                function ContactController($modal, $http, myFirebaseRef, $scope, modalService, emailService, constants) {
                     var _this = this;
                     this.$modal = $modal;
                     this.$http = $http;
@@ -13,13 +13,14 @@ var App;
                     this.$scope = $scope;
                     this.modalService = modalService;
                     this.emailService = emailService;
+                    this.constants = constants;
                     this.attemptedSend = false;
                     this.phoneNumberRegex = /^\d{10}$/;
                     this.emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                     this.sendEmail = function (form) {
                         _this.attemptedSend = true;
                         if (form.$valid) {
-                            _this.emailService.sendEmail('trey.a.hope@gmail.com', 'You Have a New Contact - ' + _this.name, 'Company: ' + _this.company + '\n' +
+                            _this.emailService.sendEmail(_this.constants.COMPANY_EMAIL, 'You Have a New Contact - ' + _this.name, 'Company: ' + _this.company + '\n' +
                                 'Email: ' + _this.email + '\n' +
                                 'Phone Number: ' + _this.phoneNumber + '\n' +
                                 'Message: ' + _this.message)
@@ -42,7 +43,7 @@ var App;
                 }
                 return ContactController;
             }());
-            ContactController.$inject = ['$modal', '$http', 'MyFirebaseRef', '$scope', 'ModalService', 'EmailService'];
+            ContactController.$inject = ['$modal', '$http', 'MyFirebaseRef', '$scope', 'ModalService', 'EmailService', 'Constants'];
             Contact.ContactController = ContactController;
             angular.module('quinntenfuller').controller('ContactController', ContactController);
         })(Contact = Pages.Contact || (Pages.Contact = {}));
