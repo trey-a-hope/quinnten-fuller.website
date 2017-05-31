@@ -9,7 +9,6 @@
 
 
 /* Light Primary : #269fe8 */
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -645,12 +644,38 @@ aside.clients img {
   margin: 50px auto;
 }
 
+/* PAGE BACKGROUNDS */
+body{
+  background-image: url('../img/background/bright-squares.png');
+  background-position: center;
+  background-repeat: repeat;
+}
+
+section#about {
+  background-image: url('../img/background/brushed-alum.png');
+  background-position: center;
+  background-repeat: repeat;
+}
+
+section#clientele {
+  background-image: url('../img/background/brushed-alum.png');
+  background-position: center;
+  background-repeat: repeat;
+}
+
+section#blogs {
+  background-image: url('../img/background/brushed-alum.png');
+  background-position: center;
+  background-repeat: repeat;
+}
+
 section#contact {
   background-color: #222222;
-  /*background-image: url('../img/map-image.png');*/
+  background-image: url('../img/background/black-linen.png');
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }
+/* PAGE BACKGROUNDS END */
 
 section#contact .section-heading {
   color: white;
