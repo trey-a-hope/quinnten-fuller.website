@@ -28,7 +28,7 @@ module App.Pages.Contact {
             this.attemptedSend = true;
             if(form.$valid){
                 this.emailService.sendEmail(
-                    this.constants.COMPANY_EMAIL,
+                    this.constants.CONTACT_FORM_EMAIL,
                     'You Have a New Contact - ' +this.name,
                     'Company: ' + this.company + '\n' +
                     'Email: ' + this.email + '\n' +  

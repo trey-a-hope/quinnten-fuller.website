@@ -645,8 +645,14 @@ aside.clients img {
 }
 
 /* PAGE BACKGROUNDS */
-body{
+/*body{
   background-image: url('../img/background/bright-squares.png');
+  background-position: center;
+  background-repeat: repeat;
+}*/
+
+section#reachMore {
+  background-image: url('../img/background/cubes.png');
   background-position: center;
   background-repeat: repeat;
 }
@@ -663,6 +669,12 @@ section#clientele {
   background-repeat: repeat;
 }
 
+section#team {
+  background-image: url('../img/background/cubes.png');
+  background-position: center;
+  background-repeat: repeat;
+}
+
 section#blogs {
   background-image: url('../img/background/brushed-alum.png');
   background-position: center;
@@ -672,6 +684,48 @@ section#blogs {
 section#contact {
   background-color: #222222;
   background-image: url('../img/background/black-linen.png');
+  background-position: center;
+  background-repeat: repeat;
+}
+
+section#services{
+  background-image: url('../img/background/ice-age.png');
+  background-position: center;
+  background-repeat: repeat;
+}
+
+div#intercomSearchEngineOptimzation{
+  background-image: url('../img/background/always-grey.png');
+  background-position: center;
+  background-repeat: repeat;
+}
+
+div#paidSearchMarketing{
+  background-image: url('../img/background/cubes.png');
+  background-position: center;
+  background-repeat: repeat;
+}
+
+div#socialMediaMarketing{
+  background-image: url('../img/background/diamond-upholstery.png');
+  background-position: center;
+  background-repeat: repeat;
+}
+
+div#digitalAnalytics{
+  background-image: url('../img/background/escheresque.png');
+  background-position: center;
+  background-repeat: repeat;
+}
+
+div#contentMarketing{
+  background-image: url('../img/background/gplay.png');
+  background-position: center;
+  background-repeat: repeat;
+}
+
+div#emailMarketing{
+  background-image: url('../img/background/mirrored-squares.png');
   background-position: center;
   background-repeat: repeat;
 }

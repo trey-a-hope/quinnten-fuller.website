@@ -28,7 +28,7 @@ module App.Modal {
             this.attemptedSend = true;
             if(form.$valid){
                 this.emailService.sendEmail(
-                    this.constants.COMPANY_EMAIL,
+                    this.constants.SEO_AUDIT_EMAIL,
                     'You Have a New SEO - ' +this.name,
                     'Company: ' + this.company + '\n' +
                     'Email: ' + this.email + '\n' +  
