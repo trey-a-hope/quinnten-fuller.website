@@ -12,5 +12,7 @@ declare module App.Pages.Services {
         static $inject: string[];
         constructor($modal: ng.ui.bootstrap.IModalService, $http: ng.IHttpService, myFirebaseRef: MyFirebaseRef, loginService: LoginService, $scope: any, modalService: ModalService);
         newSEO: () => void;
+        hover: () => void;
+        hoverOut: () => void;
     }
 }

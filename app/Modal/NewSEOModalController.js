@@ -17,7 +17,7 @@ var App;
                 this.acknowledge = function (form) {
                     _this.attemptedSend = true;
                     if (form.$valid) {
-                        _this.emailService.sendEmail(_this.constants.COMPANY_EMAIL, 'You Have a New SEO - ' + _this.name, 'Company: ' + _this.company + '\n' +
+                        _this.emailService.sendEmail(_this.constants.SEO_AUDIT_EMAIL, 'You Have a New SEO - ' + _this.name, 'Company: ' + _this.company + '\n' +
                             'Email: ' + _this.email + '\n' +
                             'Phone Number: ' + _this.phoneNumber + '\n' +
                             'Message: ' + _this.message)

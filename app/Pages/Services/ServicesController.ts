@@ -25,6 +25,13 @@ module App.Pages.Services {
             });
         }
 
+        hover = (): void => {
+            // ng-mouseover="vm.hover()" 
+        }
+
+        hoverOut = (): void => {
+            // ng-mouseleave="vm.hoverOut()"
+        }
     }
 
     angular.module('quinntenfuller').controller('ServicesController', ServicesController);

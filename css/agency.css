@@ -652,9 +652,9 @@ aside.clients img {
 }*/
 
 section#reachMore {
-  background-image: url('../img/background/cubes.png');
+  /*background-image: url('../img/background/cubes.png');
   background-position: center;
-  background-repeat: repeat;
+  background-repeat: repeat;*/
 }
 
 section#about {
@@ -670,9 +670,9 @@ section#clientele {
 }
 
 section#team {
-  background-image: url('../img/background/cubes.png');
+  /*background-image: url('../img/background/cubes.png');
   background-position: center;
-  background-repeat: repeat;
+  background-repeat: repeat;*/
 }
 
 section#blogs {
@@ -689,15 +689,15 @@ section#contact {
 }
 
 section#services{
-  background-image: url('../img/background/ice-age.png');
+  /*background-image: url('../img/background/ice-age.png');
   background-position: center;
-  background-repeat: repeat;
+  background-repeat: repeat;*/
 }
 
 div#intercomSearchEngineOptimzation{
-  background-image: url('../img/background/always-grey.png');
+  /*background-image: url('../img/background/always-grey.png');
   background-position: center;
-  background-repeat: repeat;
+  background-repeat: repeat;*/
 }
 
 div#paidSearchMarketing{

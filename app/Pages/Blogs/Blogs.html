@@ -9,7 +9,7 @@
                 </span>
             </div>
         </div>
-        <br>
+        <br/>
         <div class="row text-center">
             <div ng-repeat="blog in vm.blogs">
                 <div class="card col-xs-12 col-md-4" style="padding: 10px; box-shadow: none;">
@@ -27,7 +27,7 @@
                                 {{ blog.postDateTime | date:'MMMM dd, yyyy' }}
                             </p>
                             <!-- Open -->
-                            <button class="btn btn-primary" ng-click="vm.viewBlog(blog, $index)"><i class="fa fa-eye"></i>&nbsp;Open</button>
+                            <button class="btn btn-primary" ng-click="vm.viewBlog(blog, $index)"><i class="fa fa-eye"></i>&#160;Open</button>
                             <!-- Edit -->
                             <span class="fa-stack fa-1x"
                                 ng-show="vm.loginService.isLoggedIn()">

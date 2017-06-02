@@ -86,7 +86,6 @@
 
     <!-- Bootstrap Core JS -->
     <script src="js/scripts/ui-bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 
     <!-- Models -->
     <script src="app/Models/Blog.js"></script>
@@ -133,6 +132,26 @@
 
     <!-- Google Suite Verication --> 
     <meta name="google-site-verification" content="rnJh87f7yFkSY6K7d5mGy7KfgzW0kC7XW49OQELPBiM"/>
+
+    <!-- Google Maps API, (being used on Contact Page) -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMLp_IZVGyxBWpC2aORWLXxTNDHUl4waw">
+    </script>
+    <script>
+        function initialize(){
+            var intercomLocation = new google.maps.LatLng(25.7325583, -80.3045904);
+            var mapOptions = {
+                center: intercomLocation,
+                zoom: 16
+            };
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+            var marker = new google.maps.Marker({
+                position: intercomLocation,
+                map: map
+            });
+
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 </head>
 
 <body id="page-top" class="index" ng-controller="MainController as vm">

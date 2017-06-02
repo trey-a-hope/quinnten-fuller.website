@@ -21,6 +21,10 @@ var App;
                             backdrop: 'static'
                         });
                     };
+                    this.hover = function () {
+                    };
+                    this.hoverOut = function () {
+                    };
                 }
                 return ServicesController;
             }());
