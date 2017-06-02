@@ -67,8 +67,10 @@
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="col-xs-12">
-                        <input type="tel" 
+                        <input type="text" 
+                            onkeypress='return event.charCode >= 48 && event.charCode <= 57'
                             style="color: white"
+                            maxlength="10"
                             class="form-control" 
                             ng-model="vm.phoneNumber" 
                             placeholder="Your Phone *" 
