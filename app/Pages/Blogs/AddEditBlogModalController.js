@@ -29,6 +29,7 @@ var App;
                             }, function (success) {
                                 _this.blog.postDateTime = new Date().toDateString();
                                 _this.blog.coverImageUrl = uploadTask.snapshot.downloadURL;
+                                _this.blog.tag = _this.generateBlogTag(_this.blog.title);
                                 _this.myFirebaseRef.blogDatabaseRef.child(_this.blog.id).update(_this.blog);
                                 _this.$modalInstance.close(true);
                             });
@@ -54,6 +55,7 @@ var App;
                                 _this.modalService.displayToast('Error', error, 'danger');
                             }, function (success) {
                                 _this.blog.coverImageUrl = uploadTask.snapshot.downloadURL;
+                                _this.blog.tag = _this.generateBlogTag(_this.blog.title);
                                 _this.myFirebaseRef.blogDatabaseRef.child(_this.blog.id).update(_this.blog);
                                 _this.$modalInstance.close(true);
                             });
@@ -66,6 +68,14 @@ var App;
                     else {
                         _this.modalService.displayToast('Error', 'There were errors in your submission.', 'danger');
                     }
+                };
+                this.generateBlogTag = function (title) {
+                    var _title = '';
+                    title = title.toLowerCase();
+                    for (var i = 0; i < title.length; i++) {
+                        title[i] == ' ' ? _title += '_' : _title += title[i];
+                    }
+                    return _title;
                 };
             }
             return AddEditBlogModalController;

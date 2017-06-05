@@ -19,8 +19,8 @@ module App.Pages.Blogs {
             public $location: ng.ILocationService){
                 /* Url was manually entered... */
                 if(this.$state.params.blog == null){
-                    var blogId = $location.search().id; 
-                    this.myFirebaseRef.blogDatabaseRef.child(blogId).on('value', (snapshot: FirebaseDataSnapshot) => {
+                    var tag = $location.search().title; 
+                    this.myFirebaseRef.blogDatabaseRef.orderByChild("tag").equalTo(tag).on('child_added', (snapshot: FirebaseDataSnapshot) => {
                         this.blog = snapshot.val();
                         /* Refresh UI. */
                         if(!this.$scope.$$phase){
@@ -31,7 +31,7 @@ module App.Pages.Blogs {
                 /* Was taken to blog through clicking on a blog... */
                 else{
                     this.blog = this.$state.params.blog;
-                    $location.search('id', this.blog.id);
+                    $location.search('title', this.blog.tag);
                 }
                 /* Scroll to the top of the page. */
                 window.scrollTo(0, 0);
@@ -58,7 +58,6 @@ module App.Pages.Blogs {
                     break;
             }
         }
-
     }
 
     angular.module('quinntenfuller').controller('FullBlogController', FullBlogController);

@@ -31,6 +31,7 @@ module App.Blogs {
                     }, (success: any) => {
                         this.blog.postDateTime = new Date().toDateString();
                         this.blog.coverImageUrl = uploadTask.snapshot.downloadURL;
+                        this.blog.tag = this.generateBlogTag(this.blog.title);
                         this.myFirebaseRef.blogDatabaseRef.child(this.blog.id).update(this.blog);
                         this.$modalInstance.close(true);
                     });
@@ -55,6 +56,7 @@ module App.Blogs {
                         this.modalService.displayToast('Error', error, 'danger');
                     }, (success: any) => {
                         this.blog.coverImageUrl = uploadTask.snapshot.downloadURL;
+                        this.blog.tag = this.generateBlogTag(this.blog.title);
                         this.myFirebaseRef.blogDatabaseRef.child(this.blog.id).update(this.blog);
                         this.$modalInstance.close(true);
                     });
@@ -66,6 +68,17 @@ module App.Blogs {
             }else{
                 this.modalService.displayToast('Error', 'There were errors in your submission.', 'danger');
             }
+        }
+
+        generateBlogTag = (title: string): string => {
+            var _title = '';
+            /* Lowercase Title */
+            title = title.toLowerCase();
+            /* Remove spaces between title. */
+            for(var i = 0; i < title.length; i++){
+                title[i] == ' ' ? _title += '_' : _title += title[i];
+            }
+            return _title;
         }
     }
 

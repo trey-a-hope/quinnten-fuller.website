@@ -7,5 +7,6 @@ module App.Models {
         public postDateTime: string;
         public html: string;
         public coverImageUrl: string;
+        public tag: string;
     }
 }
