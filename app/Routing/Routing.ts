@@ -14,7 +14,7 @@ module Routing {
 
             /* Full Blog Page */
             this.$stateProvider.state('fullblog', {
-                url:            '/blog',
+                url:            '/blog/{path:.*}',
                 templateUrl:    'app/Pages/Blogs/FullBlog.html',
                 controller:     'FullBlogController',
                 controllerAs:   'vm',

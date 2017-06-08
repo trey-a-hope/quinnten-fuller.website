@@ -19,7 +19,11 @@ module App.Pages.Blogs {
             public $location: ng.ILocationService){
                 /* Url was manually entered... */
                 if(this.$state.params.blog == null){
-                    var tag = $location.search().title; 
+                    /* Get blog tag from URL */
+                    var path = $location.absUrl();
+                    var n = path.lastIndexOf('/');
+                    var tag = path.substring(n + 1);
+                    /* Serach for blog based on tag */
                     this.myFirebaseRef.blogDatabaseRef.orderByChild("tag").equalTo(tag).on('child_added', (snapshot: FirebaseDataSnapshot) => {
                         this.blog = snapshot.val();
                         /* Refresh UI. */
@@ -31,7 +35,7 @@ module App.Pages.Blogs {
                 /* Was taken to blog through clicking on a blog... */
                 else{
                     this.blog = this.$state.params.blog;
-                    $location.search('title', this.blog.tag);
+                    $location.path('/blog/' + this.blog.tag);
                 }
                 /* Scroll to the top of the page. */
                 window.scrollTo(0, 0);

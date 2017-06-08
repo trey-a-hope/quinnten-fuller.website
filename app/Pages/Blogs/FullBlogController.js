@@ -37,7 +37,9 @@ var App;
                         }
                     };
                     if (this.$state.params.blog == null) {
-                        var tag = $location.search().title;
+                        var path = $location.absUrl();
+                        var n = path.lastIndexOf('/');
+                        var tag = path.substring(n + 1);
                         this.myFirebaseRef.blogDatabaseRef.orderByChild("tag").equalTo(tag).on('child_added', function (snapshot) {
                             _this.blog = snapshot.val();
                             if (!_this.$scope.$$phase) {
@@ -47,7 +49,7 @@ var App;
                     }
                     else {
                         this.blog = this.$state.params.blog;
-                        $location.search('title', this.blog.tag);
+                        $location.path('/blog/' + this.blog.tag);
                     }
                     window.scrollTo(0, 0);
                 }
