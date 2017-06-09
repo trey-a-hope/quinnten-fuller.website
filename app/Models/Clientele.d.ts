@@ -7,5 +7,6 @@ declare module App.Models {
         twitterLink: string;
         facebookLink: string;
         linkedinLink: string;
+        imageDownloadUrl: string;
     }
 }

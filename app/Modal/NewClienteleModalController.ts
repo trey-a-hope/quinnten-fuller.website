@@ -23,9 +23,25 @@ module App.Modal {
         update = (form: any): void => {
             this.attemptedSend = true;
             if(form.$valid){
-                this.myFirebaseRef.clienteleDatabaseRef.child(this.clientele.id).update(this.clientele);
-                this.modalService.displayToast('Success', 'Updated clientele.', 'success');
-                this.$modalInstance.close();
+                var fileChooser: any = document.getElementById('file-chooser-clientele');     
+                var file = fileChooser.files[0]; 
+
+                if(file){
+                    var uploadTask = this.myFirebaseRef.storageRef.child("ClientelePage/" + this.clientele.id).put(file);
+                    uploadTask.on('state_changed', (snapshot: any) => {
+                    }, (error: any) => {
+                        this.modalService.displayToast('Error', error, 'danger');
+                    }, (success: any) => {
+                        this.clientele.imageDownloadUrl = uploadTask.snapshot.downloadURL;
+                        this.myFirebaseRef.clienteleDatabaseRef.child(this.clientele.id).update(this.clientele);
+                        this.modalService.displayToast('Success', 'Updated clientele.', 'success');
+                        this.$modalInstance.close();
+                    });
+                }else{
+                    this.myFirebaseRef.clienteleDatabaseRef.child(this.clientele.id).update(this.clientele);
+                    this.$modalInstance.close();
+                    this.modalService.displayToast('Success', 'Updated clientele.', 'success');
+                }
             }else{
                 this.modalService.displayToast('Sorry', 'There were errors in your submission.', 'danger')
             }
@@ -34,11 +50,26 @@ module App.Modal {
         submit = (form: any): void => {
             this.attemptedSend = true;
             if(form.$valid){
-                var newPostKey: string = this.myFirebaseRef.clienteleDatabaseRef.push().key.toString();
-                this.clientele.id = newPostKey;
-                this.myFirebaseRef.clienteleDatabaseRef.child(newPostKey.toString()).update(this.clientele);
-                this.modalService.displayToast('Success', 'Added new clientele.', 'success');
-                this.$modalInstance.close();
+                var fileChooser: any = document.getElementById('file-chooser-clientele');     
+                var file = fileChooser.files[0]; 
+
+                if(file){
+                    var newPostKey: string = this.myFirebaseRef.clienteleDatabaseRef.push().key.toString();
+                    this.clientele.id = newPostKey;
+
+                    var uploadTask = this.myFirebaseRef.storageRef.child("ClientelePage/" + this.clientele.id).put(file);
+                    uploadTask.on('state_changed', (snapshot: any) => {
+                    }, (error: any) => {
+                        this.modalService.displayToast('Error', error, 'danger');
+                    }, (success: any) => {
+                        this.clientele.imageDownloadUrl = uploadTask.snapshot.downloadURL;
+                        this.myFirebaseRef.clienteleDatabaseRef.child(newPostKey.toString()).update(this.clientele);
+                        this.modalService.displayToast('Success', 'Added new clientele.', 'success');
+                        this.$modalInstance.close();
+                    });
+                }else{
+                    this.modalService.displayToast('Error', 'Must select an image for this client.', 'danger');;
+                }   
             }else{
                 this.modalService.displayToast('Sorry', 'There were errors in your submission.', 'danger')
             }

@@ -7,5 +7,6 @@ module App.Models {
         public twitterLink: string;
         public facebookLink: string;
         public linkedinLink: string;
+        public imageDownloadUrl: string;
     }
 }
